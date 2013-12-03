@@ -20,3 +20,19 @@ Stack trace:
 REQUEST_URI=/creditaxi/gii/crud
 HTTP_REFERER=http://localhost/creditaxi/gii/default/index
 ---
+2013/12/02 21:15:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login".' in C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('login')
+#1 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\creditaxi\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/creditaxi/login
+---
+2013/12/02 21:15:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "login".' in C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('login')
+#1 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\creditaxi\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/creditaxi/login
+---
