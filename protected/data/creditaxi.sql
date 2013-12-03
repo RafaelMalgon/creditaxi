@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 29-11-2013 a las 18:23:25
+-- Tiempo de generación: 02-12-2013 a las 20:52:10
 -- Versión del servidor: 5.5.16
 -- Versión de PHP: 5.3.8
 
@@ -96,7 +96,15 @@ CREATE TABLE IF NOT EXISTS `estacionservicio` (
   `nombre` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `direccion` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id_estacion_servicio`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+
+--
+-- Volcado de datos para la tabla `estacionservicio`
+--
+
+INSERT INTO `estacionservicio` (`id_estacion_servicio`, `nombre`, `direccion`) VALUES
+(1, 'Texaco', 'Calle falsa 123'),
+(2, 'shell', 'avenida falsa 123');
 
 -- --------------------------------------------------------
 
@@ -141,7 +149,16 @@ CREATE TABLE IF NOT EXISTS `producto` (
   `valor` int(11) NOT NULL,
   PRIMARY KEY (`id_producto`),
   KEY `id_estacion_servicio` (`id_estacion_servicio`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+
+--
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`id_producto`, `id_estacion_servicio`, `nombre`, `tipo`, `valor`) VALUES
+(1, 1, 'Gasolina extra', 'G', 10000),
+(2, 1, 'Lavada 1', 'L', 10000),
+(3, 2, 'lavada 2', 'L', 50000);
 
 -- --------------------------------------------------------
 
@@ -192,6 +209,20 @@ CREATE TABLE IF NOT EXISTS `transaccion` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `usuario`
+--
+
+CREATE TABLE IF NOT EXISTS `usuario` (
+  `idUsuario` int(11) NOT NULL,
+  `clave` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `idRol` int(11) NOT NULL,
+  PRIMARY KEY (`idUsuario`),
+  KEY `id_rol` (`idRol`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `vendedor`
 --
 
@@ -215,14 +246,13 @@ CREATE TABLE IF NOT EXISTS `vendedor` (
 -- Filtros para la tabla `administrador`
 --
 ALTER TABLE `administrador`
-  ADD CONSTRAINT `FK_EstacionServicio_Administrador` FOREIGN KEY (`id_estacion_servicio`) REFERENCES `estacionservicio` (`id_estacion_servicio`),
-  ADD CONSTRAINT `FK_id_rol` FOREIGN KEY (`id_rol`) REFERENCES `rol` (`id_rol`);
+  ADD CONSTRAINT `administrador_ibfk_1` FOREIGN KEY (`id_administrador`) REFERENCES `usuario` (`idUsuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  ADD CONSTRAINT `cliente_ibfk_1` FOREIGN KEY (`id_rol`) REFERENCES `rol` (`id_rol`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `cliente_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `usuario` (`idUsuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `conductor`
@@ -269,10 +299,16 @@ ALTER TABLE `transaccion`
   ADD CONSTRAINT `FK_vende_Producto` FOREIGN KEY (`id_producto`) REFERENCES `producto` (`id_producto`);
 
 --
+-- Filtros para la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  ADD CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`idRol`) REFERENCES `rol` (`id_rol`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Filtros para la tabla `vendedor`
 --
 ALTER TABLE `vendedor`
-  ADD CONSTRAINT `vendedor_ibfk_1` FOREIGN KEY (`id_rol`) REFERENCES `rol` (`id_rol`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `vendedor_ibfk_1` FOREIGN KEY (`id_vendedor`) REFERENCES `usuario` (`idUsuario`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `FK_EstacionServicio_Vendedor` FOREIGN KEY (`id_estacion_servicio`) REFERENCES `estacionservicio` (`id_estacion_servicio`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
