@@ -11,7 +11,7 @@
  * @property string $correo
  *
  * The followings are the available model relations:
- * @property Rol $idRol
+ * @property Usuario $idCliente
  * @property Credito[] $creditos
  * @property Flota[] $flotas
  */
@@ -61,7 +61,7 @@ class Cliente extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'idRol' => array(self::BELONGS_TO, 'Rol', 'id_rol'),
+			'idCliente' => array(self::BELONGS_TO, 'Usuario', 'id_cliente'),
 			'creditos' => array(self::HAS_MANY, 'Credito', 'id_cliente'),
 			'flotas' => array(self::HAS_MANY, 'Flota', 'id_cliente'),
 		);

@@ -8,10 +8,8 @@
  * @property string $nombreRol
  *
  * The followings are the available model relations:
- * @property Administrador[] $administradors
- * @property Cliente[] $clientes
  * @property Permisos[] $permisoses
- * @property Vendedor[] $vendedors
+ * @property Usuario[] $usuarios
  */
 class Rol extends CActiveRecord
 {
@@ -58,10 +56,8 @@ class Rol extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'administradors' => array(self::HAS_MANY, 'Administrador', 'id_rol'),
-			'clientes' => array(self::HAS_MANY, 'Cliente', 'id_rol'),
 			'permisoses' => array(self::HAS_MANY, 'Permisos', 'id_rol'),
-			'vendedors' => array(self::HAS_MANY, 'Vendedor', 'id_rol'),
+			'usuarios' => array(self::HAS_MANY, 'Usuario', 'idRol'),
 		);
 	}
 

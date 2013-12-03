@@ -1,25 +1,25 @@
 <?php
 
 /**
- * This is the model class for table "vendedor".
+ * This is the model class for table "usuario".
  *
- * The followings are the available columns in table 'vendedor':
- * @property integer $id_vendedor
- * @property integer $id_estacion_servicio
- * @property integer $id_rol
- * @property string $nombre
+ * The followings are the available columns in table 'usuario':
+ * @property integer $idUsuario
+ * @property string $clave
+ * @property integer $idRol
  *
  * The followings are the available model relations:
- * @property Transaccion[] $transaccions
- * @property Usuario $idVendedor
- * @property Estacionservicio $idEstacionServicio
+ * @property Administrador $administrador
+ * @property Cliente $cliente
+ * @property Rol $idRol0
+ * @property Vendedor $vendedor
  */
-class Vendedor extends CActiveRecord
+class Usuario extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return Vendedor the static model class
+	 * @return Usuario the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -31,7 +31,7 @@ class Vendedor extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'vendedor';
+		return 'usuario';
 	}
 
 	/**
@@ -42,12 +42,12 @@ class Vendedor extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_vendedor, id_estacion_servicio, id_rol, nombre', 'required'),
-			array('id_vendedor, id_estacion_servicio, id_rol', 'numerical', 'integerOnly'=>true),
-			array('nombre', 'length', 'max'=>50),
+			array('idUsuario, clave, idRol', 'required'),
+			array('idUsuario, idRol', 'numerical', 'integerOnly'=>true),
+			array('clave', 'length', 'max'=>20),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id_vendedor, id_estacion_servicio, id_rol, nombre', 'safe', 'on'=>'search'),
+			array('idUsuario, clave, idRol', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -59,9 +59,10 @@ class Vendedor extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'transaccions' => array(self::HAS_MANY, 'Transaccion', 'id_vendedor'),
-			'idVendedor' => array(self::BELONGS_TO, 'Usuario', 'id_vendedor'),
-			'idEstacionServicio' => array(self::BELONGS_TO, 'Estacionservicio', 'id_estacion_servicio'),
+			'administrador' => array(self::HAS_ONE, 'Administrador', 'id_administrador'),
+			'cliente' => array(self::HAS_ONE, 'Cliente', 'id_cliente'),
+			'idRol0' => array(self::BELONGS_TO, 'Rol', 'idRol'),
+			'vendedor' => array(self::HAS_ONE, 'Vendedor', 'id_vendedor'),
 		);
 	}
 
@@ -71,10 +72,9 @@ class Vendedor extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id_vendedor' => 'Id Vendedor',
-			'id_estacion_servicio' => 'Id Estacion Servicio',
-			'id_rol' => 'Id Rol',
-			'nombre' => 'Nombre',
+			'idUsuario' => 'Id Usuario',
+			'clave' => 'Clave',
+			'idRol' => 'Id Rol',
 		);
 	}
 
@@ -89,10 +89,9 @@ class Vendedor extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
-		$criteria->compare('id_vendedor',$this->id_vendedor);
-		$criteria->compare('id_estacion_servicio',$this->id_estacion_servicio);
-		$criteria->compare('id_rol',$this->id_rol);
-		$criteria->compare('nombre',$this->nombre,true);
+		$criteria->compare('idUsuario',$this->idUsuario);
+		$criteria->compare('clave',$this->clave,true);
+		$criteria->compare('idRol',$this->idRol);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

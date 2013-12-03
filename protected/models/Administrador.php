@@ -10,8 +10,7 @@
  * @property string $nombre
  *
  * The followings are the available model relations:
- * @property Estacionservicio $idEstacionServicio
- * @property Rol $idRol
+ * @property Usuario $idAdministrador
  */
 class Administrador extends CActiveRecord
 {
@@ -58,8 +57,7 @@ class Administrador extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'idEstacionServicio' => array(self::BELONGS_TO, 'Estacionservicio', 'id_estacion_servicio'),
-			'idRol' => array(self::BELONGS_TO, 'Rol', 'id_rol'),
+			'idAdministrador' => array(self::BELONGS_TO, 'Usuario', 'id_administrador'),
 		);
 	}
 
