@@ -19,7 +19,6 @@ class UserIdentity extends CUserIdentity
 	{
 		$users=array(
 			// username => password
-                    'admin'=>'admin'
 		);
                 $model = Usuario::model()->findAll();
                 foreach ($model as $val) {
@@ -29,8 +28,10 @@ class UserIdentity extends CUserIdentity
 			$this->errorCode=self::ERROR_USERNAME_INVALID;
 		elseif($users[$this->username]!==$this->password)
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
-		else
+		else{
+                        $usuario=  Usuario::model()->findByPk($this->username);
 			$this->errorCode=self::ERROR_NONE;
+                }
 		return !$this->errorCode;
 	}
 }
