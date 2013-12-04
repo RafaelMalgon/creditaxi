@@ -16,13 +16,14 @@ class UserIdentity extends CUserIdentity
 	 * @return boolean whether authentication succeeds.
 	 */
 	public function authenticate()
-	{/*
+	{
 		$users=array(
 			// username => password
-		);*/
+                    'admin'=>'admin'
+		);
                 $model = Usuario::model()->findAll();
                 foreach ($model as $val) {
-                    $users[]=array($val->idUsuario=>$val->clave);
+                    $users[$val->idUsuario]=$val->clave;
                 }
 		if(!isset($users[$this->username]))
 			$this->errorCode=self::ERROR_USERNAME_INVALID;

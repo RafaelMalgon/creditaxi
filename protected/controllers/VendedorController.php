@@ -67,9 +67,9 @@ class VendedorController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Vendedor']))
+		if($this->getPost('Vendedor') != null)
 		{
-			$model->attributes=$_POST['Vendedor'];
+			$model->setAttributes($this->getPost('Vendedor'));
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id_vendedor));
 		}
@@ -91,9 +91,9 @@ class VendedorController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Vendedor']))
+		if($this->getPost('Vendedor') != null)
 		{
-			$model->attributes=$_POST['Vendedor'];
+			$model->setAttributes($this->getPost('Vendedor'));
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id_vendedor));
 		}
@@ -113,8 +113,8 @@ class VendedorController extends Controller
 		$this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+		if($this->getGet('ajax')==null)
+			$this->redirect($this->getPost('returnUrl')!=null ? $this->getPost('returnUrl') : array('admin'));
 	}
 
 	/**
@@ -164,7 +164,7 @@ class VendedorController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='vendedor-form')
+		if($this->getPost('ajax')!=null && $this->getPost('ajax')==='vendedor-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

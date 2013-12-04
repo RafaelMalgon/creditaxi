@@ -67,9 +67,9 @@ class UsuarioController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Usuario']))
+		if($this->getPost('Usuario') != null)
 		{
-			$model->attributes=$_POST['Usuario'];
+			$model->setAttributes($this->getPost('Usuario'));
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->idUsuario));
 		}
@@ -91,9 +91,9 @@ class UsuarioController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Usuario']))
+		if($this->getPost('Usuario') != null)
 		{
-			$model->attributes=$_POST['Usuario'];
+			$model->setAttributes($this->getPost('Usuario'));
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->idUsuario));
 		}
@@ -113,8 +113,8 @@ class UsuarioController extends Controller
 		$this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+		if($this->getGet('ajax')==null)
+			$this->redirect($this->getPost('returnUrl')!=null ? $this->getPost('returnUrl') : array('admin'));
 	}
 
 	/**
@@ -164,7 +164,7 @@ class UsuarioController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='usuario-form')
+		if($this->getPost('ajax')!=null && $this->getPost('ajax')==='usuario-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

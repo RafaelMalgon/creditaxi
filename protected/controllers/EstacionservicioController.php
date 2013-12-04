@@ -63,8 +63,8 @@ class EstacionservicioController extends Controller {
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
 
-        if (isset($_POST['Estacionservicio'])) {
-            $model->attributes = $_POST['Estacionservicio'];
+        if ($this->getPost('Estacionservicio') != null) {
+            $model->setAttributes($this->getPost('Estacionservicio'));
             if ($model->save())
                 $this->redirect(array('view', 'id' => $model->id_estacion_servicio));
         }
@@ -85,8 +85,8 @@ class EstacionservicioController extends Controller {
         // Uncomment the following line if AJAX validation is needed
         // $this->performAjaxValidation($model);
 
-        if (isset($_POST['Estacionservicio'])) {
-            $model->attributes = $_POST['Estacionservicio'];
+        if ($this->getPost('Estacionservicio') != null) {
+            $model->setAttributes($this->getPost('Estacionservicio'));
             if ($model->save())
                 $this->redirect(array('view', 'id' => $model->id_estacion_servicio));
         }
@@ -105,8 +105,8 @@ class EstacionservicioController extends Controller {
         $this->loadModel($id)->delete();
 
         // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-        if (!isset($_GET['ajax']))
-            $this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+        if ($this->getGet('ajax') == null)
+            $this->redirect($this->getPost('returnUrl') != null ? $this->getPost('returnUrl') : array('admin'));
     }
 
     /**
@@ -152,7 +152,7 @@ class EstacionservicioController extends Controller {
      * @param Estacionservicio $model the model to be validated
      */
     protected function performAjaxValidation($model) {
-        if (isset($_POST['ajax']) && $_POST['ajax'] === 'estacionservicio-form') {
+        if ($this->getPost('ajax') != null && $this->getPost('ajax') === 'estacionservicio-form') {
             echo CActiveForm::validate($model);
             Yii::app()->end();
         }

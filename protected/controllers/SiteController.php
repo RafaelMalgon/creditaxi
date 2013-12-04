@@ -52,9 +52,9 @@ class SiteController extends Controller
 	public function actionContact()
 	{
 		$model=new ContactForm;
-		if(isset($_POST['ContactForm']))
+		if($this->getPost('ContactForm')!=null)
 		{
-			$model->attributes=$_POST['ContactForm'];
+                        $model->setAttributes($this->getPost('ContactForm'));
 			if($model->validate())
 			{
 				$name='=?UTF-8?B?'.base64_encode($model->name).'?=';
@@ -80,9 +80,9 @@ class SiteController extends Controller
 		$model=new LoginForm;
 
 		// collect user input data
-		if(isset($_POST['LoginForm']))
+		if($this->getPost('LoginForm')!=null)
 		{
-			$model->attributes=$_POST['LoginForm'];
+			$model->setAttributes($this->getPost('LoginForm'));
 			// validate user input and redirect to the previous page if valid
                         $validate=$model->validate();
                         $login=$model->login();

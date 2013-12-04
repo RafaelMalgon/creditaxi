@@ -67,9 +67,9 @@ class ConductorController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Conductor']))
+		if($this->getPost('Conductor')!=null)
 		{
-			$model->attributes=$_POST['Conductor'];
+			$model->setAttributes($this->getPost('Conductor'));
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id_conductor));
 		}
@@ -91,9 +91,9 @@ class ConductorController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Conductor']))
+		if($this->getPost('Conductor')!=null)
 		{
-			$model->attributes=$_POST['Conductor'];
+			$model->setAttributes($this->getPost('Conductor'));
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id_conductor));
 		}
@@ -113,8 +113,8 @@ class ConductorController extends Controller
 		$this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+		if($this->getGet('ajax')==null)
+			$this->redirect($this->getPost('returnUrl')!=null ? $this->getPost('returnUrl') : array('admin'));
 	}
 
 	/**
@@ -164,7 +164,7 @@ class ConductorController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='conductor-form')
+		if($this->getPost('ajax')!=null && $this->getPost('ajax')==='conductor-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

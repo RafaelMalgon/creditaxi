@@ -50,7 +50,6 @@ class CFormModel extends CModel
 	public function init()
 	{
 	}
-
 	/**
 	 * Returns the list of attribute names.
 	 * By default, this method returns all public properties of the class.

@@ -67,9 +67,9 @@ class AdministradorController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Administrador']))
+		if($this->getPost('Administrador'))
 		{
-			$model->attributes=$_POST['Administrador'];
+			$model->setAttributes($this->getPost('Administrador'));
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id_administrador));
 		}
@@ -91,9 +91,9 @@ class AdministradorController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Administrador']))
+		if($this->getPost('Administrador'))
 		{
-			$model->attributes=$_POST['Administrador'];
+			$model->setAttributes($this->getPost(['Administrador']));
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id_administrador));
 		}
@@ -113,8 +113,8 @@ class AdministradorController extends Controller
 		$this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+		if($this->getGet('ajax')==null)
+			$this->redirect($this->getPost('returnUrl')!=null ? $this->getPost('returnUrl') : array('admin'));
 	}
 
 	/**
@@ -135,8 +135,8 @@ class AdministradorController extends Controller
 	{
 		$model=new Administrador('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Administrador']))
-			$model->attributes=$_GET['Administrador'];
+		if($this->getGet('Administrador')!=null)
+			$model->setAttributes($this->getGet('Administrador'));
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -164,7 +164,7 @@ class AdministradorController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='administrador-form')
+		if($this->getPost('ajax')!=null && $this->getPost('ajax')==='administrador-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

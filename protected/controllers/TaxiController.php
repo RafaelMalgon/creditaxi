@@ -67,9 +67,9 @@ class TaxiController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Taxi']))
+		if($this->getPost('Taxi') != null)
 		{
-			$model->attributes=$_POST['Taxi'];
+			$model->setAttributes($this->getPost('Taxi'));
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->placa));
 		}
@@ -91,9 +91,9 @@ class TaxiController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Taxi']))
+		if($this->getPost('Taxi') != null)
 		{
-			$model->attributes=$_POST['Taxi'];
+			$model->setAttributes($this->getPost('Taxi'));
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->placa));
 		}
@@ -113,8 +113,8 @@ class TaxiController extends Controller
 		$this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+		if($this->getGet('ajax')==null)
+			$this->redirect($this->getPost('returnUrl')!=null ? $this->getPost('returnUrl') : array('admin'));
 	}
 
 	/**
@@ -164,7 +164,7 @@ class TaxiController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='taxi-form')
+		if($this->getPost('ajax')!=null && $this->getPost('ajax')==='taxi-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();

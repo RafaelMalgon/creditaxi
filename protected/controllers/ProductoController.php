@@ -67,9 +67,9 @@ class ProductoController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Producto']))
+		if($this->getPost('Producto') != null)
 		{
-			$model->attributes=$_POST['Producto'];
+			$model->setAttributes($this->getPost('Producto'));
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id_producto));
 		}
@@ -91,9 +91,9 @@ class ProductoController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Producto']))
+		if($this->getPost('Producto') != null)
 		{
-			$model->attributes=$_POST['Producto'];
+			$model->setAttributes($this->getPost('Producto'));
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id_producto));
 		}
@@ -113,8 +113,8 @@ class ProductoController extends Controller
 		$this->loadModel($id)->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if(!isset($_GET['ajax']))
-			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
+		if($this->getGet('ajax')==null)
+			$this->redirect($this->getPost('returnUrl')!=null ? $this->getPost('returnUrl') : array('admin'));
 	}
 
 	/**
@@ -164,7 +164,7 @@ class ProductoController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='producto-form')
+		if($this->getPost('ajax')!=null && $this->getPost('ajax')==='producto-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
