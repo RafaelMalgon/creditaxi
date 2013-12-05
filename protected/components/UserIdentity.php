@@ -30,6 +30,17 @@ class UserIdentity extends CUserIdentity
 			$this->errorCode=self::ERROR_PASSWORD_INVALID;
 		else{
                         $usuario=  Usuario::model()->findByPk($this->username);
+                        $rol =$usuario->getRelated("idRol0");
+                        Yii::app()->session['Rol']=$rol->nombreRol;
+                        if($rol->nombreRol=="Cliente"){
+                            Yii::app()->session['Usuario']=  Cliente::model()->findByPk($usuario->idUsuario);
+                        }else if($rol->nombreRol=="Administrador"){
+                            Yii::app()->session['Usuario']= Administrador::model()->findByPk($usuario->idUsuario);
+                        }else if($rol->nombreRol=="Operario"){
+                            Yii::app()->session['Usuario']= Vendedor::model()->findByPk($usuario->idUsuario);
+                        }else{
+                            Yii::app()->session['Usuario']= null;
+                        }
 			$this->errorCode=self::ERROR_NONE;
                 }
 		return !$this->errorCode;
