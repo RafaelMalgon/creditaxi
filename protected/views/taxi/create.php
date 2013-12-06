@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Taxi', 'url'=>array('index')),
-	array('label'=>'Manage Taxi', 'url'=>array('admin')),
+	//array('label'=>'List Taxi', 'url'=>array('index')),
+	array('label'=>'Gestionar Taxi', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Taxi</h1>
+<h1>Crear Taxi</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

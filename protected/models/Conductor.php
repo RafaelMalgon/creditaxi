@@ -65,7 +65,7 @@ class Conductor extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id_conductor' => 'Id Conductor',
+			'id_conductor' => 'Cedula',
 			'placa' => 'Placa',
 		);
 	}

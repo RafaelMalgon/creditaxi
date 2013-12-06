@@ -93,7 +93,7 @@ class AdministradorController extends Controller
 
 		if($this->getPost('Administrador'))
 		{
-			$model->setAttributes($this->getPost(['Administrador']));
+			$model->setAttributes($this->getPost('Administrador'));
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id_administrador));
 		}

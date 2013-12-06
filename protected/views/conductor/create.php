@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Conductor', 'url'=>array('index')),
-	array('label'=>'Manage Conductor', 'url'=>array('admin')),
+	//array('label'=>'List Conductor', 'url'=>array('index')),
+	array('label'=>'Gestionar Conductores', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Conductor</h1>
+<h1>Crear Conductor</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
