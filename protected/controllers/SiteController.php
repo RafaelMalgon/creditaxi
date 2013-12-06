@@ -52,7 +52,7 @@ class SiteController extends Controller
 	public function actionLogin()
 	{
 		$model=new LoginForm;
-
+                var_dump(Yii::app()->session['Usuario']);
 		// collect user input data
 		if($this->getPost('LoginForm')!=null)
 		{
