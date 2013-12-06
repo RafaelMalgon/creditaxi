@@ -16,13 +16,13 @@ $this->menu=array(
 );
 ?>
 
-<h1>Vista Cliente #<?php echo $model->id_cliente; ?></h1>
+<h1>Vista Cliente # <?php echo $model->id_cliente; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
 		'id_cliente',
-		'id_rol',
+		//'id_rol',
 		'nombre',
 		'telefono',
 		'correo',

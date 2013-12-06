@@ -587,3 +587,214 @@ Stack trace:
 REQUEST_URI=/creditaxi/cliente/12345
 HTTP_REFERER=http://localhost/creditaxi/Cliente
 ---
+2013/12/06 19:04:29 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\creditaxi\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\creditaxi\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\creditaxi\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\creditaxi\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\creditaxi\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('Taxi/admin')
+#9 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\creditaxi\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/creditaxi/Taxi/admin
+HTTP_REFERER=http://localhost/creditaxi/Cliente
+---
+2013/12/06 19:04:32 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\creditaxi\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\creditaxi\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\creditaxi\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\creditaxi\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\creditaxi\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('Taxi/admin')
+#9 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\creditaxi\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/creditaxi/Taxi/admin
+HTTP_REFERER=http://localhost/creditaxi/Taxi/admin
+---
+2013/12/06 19:07:13 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\creditaxi\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\creditaxi\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\creditaxi\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\creditaxi\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\creditaxi\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('Taxi/admin')
+#9 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\creditaxi\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/creditaxi/Taxi/admin
+HTTP_REFERER=http://localhost/creditaxi/cliente/12345
+---
+2013/12/06 19:09:01 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`creditaxi`.`conductor`, CONSTRAINT `FK_conduce_Taxi` FOREIGN KEY (`placa`) REFERENCES `taxi` (`placa`)). La sentencia SQL ejecutada fue: INSERT INTO `conductor` (`id_conductor`, `placa`) VALUES (:yp0, :yp1).
+in C:\xampp\htdocs\creditaxi\protected\controllers\ConductorController.php (73)
+in C:\xampp\htdocs\creditaxi\index.php (13)
+2013/12/06 19:09:01 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`creditaxi`.`conductor`, CONSTRAINT `FK_conduce_Taxi` FOREIGN KEY (`placa`) REFERENCES `taxi` (`placa`)). The SQL statement executed was: INSERT INTO `conductor` (`id_conductor`, `placa`) VALUES (:yp0, :yp1)' in C:\xampp\htdocs\creditaxi\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\db\ar\CActiveRecord.php(1023): CDbCommand->execute()
+#1 C:\xampp\htdocs\creditaxi\framework\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\creditaxi\protected\controllers\ConductorController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\creditaxi\framework\web\actions\CInlineAction.php(49): ConductorController->actionCreate()
+#4 C:\xampp\htdocs\creditaxi\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\creditaxi\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\creditaxi\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\creditaxi\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\creditaxi\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('conductor/creat...')
+#14 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\creditaxi\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/creditaxi/conductor/create
+HTTP_REFERER=http://localhost/creditaxi/conductor/create
+---
+2013/12/06 19:28:01 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\creditaxi\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\creditaxi\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\creditaxi\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\creditaxi\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\creditaxi\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('flota/admin')
+#9 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\creditaxi\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/creditaxi/flota/admin
+HTTP_REFERER=http://localhost/creditaxi/taxi/create
+---
+2013/12/06 19:37:51 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '12345' for key 'UQ_Flota_id_cliente'. La sentencia SQL ejecutada fue: INSERT INTO `flota` (`id_cliente`, `sobrecupoAgotado`) VALUES (:yp0, :yp1).
+in C:\xampp\htdocs\creditaxi\protected\controllers\FlotaController.php (72)
+in C:\xampp\htdocs\creditaxi\index.php (13)
+2013/12/06 19:37:51 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '12345' for key 'UQ_Flota_id_cliente'. The SQL statement executed was: INSERT INTO `flota` (`id_cliente`, `sobrecupoAgotado`) VALUES (:yp0, :yp1)' in C:\xampp\htdocs\creditaxi\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\db\ar\CActiveRecord.php(1023): CDbCommand->execute()
+#1 C:\xampp\htdocs\creditaxi\framework\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\creditaxi\protected\controllers\FlotaController.php(72): CActiveRecord->save()
+#3 C:\xampp\htdocs\creditaxi\framework\web\actions\CInlineAction.php(49): FlotaController->actionCreate()
+#4 C:\xampp\htdocs\creditaxi\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\creditaxi\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\creditaxi\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\creditaxi\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\creditaxi\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('flota/create')
+#14 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\creditaxi\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/creditaxi/flota/create
+HTTP_REFERER=http://localhost/creditaxi/flota/create
+---
+2013/12/06 19:47:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "CAU123" solicitada.' in C:\xampp\htdocs\creditaxi\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\web\CController.php(270): CController->missingAction('CAU123')
+#1 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(282): CController->run('CAU123')
+#2 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('taxi/CAU123')
+#3 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\creditaxi\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/creditaxi/taxi/CAU123
+HTTP_REFERER=http://localhost/creditaxi/taxi/create
+---
+2013/12/06 19:48:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "CAU123" solicitada.' in C:\xampp\htdocs\creditaxi\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\web\CController.php(270): CController->missingAction('CAU123')
+#1 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(282): CController->run('CAU123')
+#2 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('taxi/CAU123')
+#3 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\creditaxi\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/creditaxi/taxi/CAU123
+HTTP_REFERER=http://localhost/creditaxi/taxi/index
+---
+2013/12/06 19:58:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Combustible" solicitada.' in C:\xampp\htdocs\creditaxi\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\web\CController.php(270): CController->missingAction('Combustible')
+#1 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(282): CController->run('Combustible')
+#2 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('Producto/Combus...')
+#3 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\creditaxi\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/creditaxi/Producto/Combustible
+HTTP_REFERER=http://localhost/creditaxi/taxi/index
+---
+2013/12/06 20:11:38 [error] [exception.CException] exception 'CException' with message 'Propiedad "Conductor"."id_cliente" no se encuentra definida.' in C:\xampp\htdocs\creditaxi\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\db\ar\CActiveRecord.php(143): CComponent->__get('id_cliente')
+#1 C:\xampp\htdocs\creditaxi\protected\views\conductor\_form.php(27): CActiveRecord->__get('id_cliente')
+#2 C:\xampp\htdocs\creditaxi\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\creditaxi\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\creditaxi\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\creditaxi\protected\views\conductor\create.php(18): CController->renderPartial('_form', Array)
+#6 C:\xampp\htdocs\creditaxi\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#7 C:\xampp\htdocs\creditaxi\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\creditaxi\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\creditaxi\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#10 C:\xampp\htdocs\creditaxi\protected\controllers\ConductorController.php(79): CController->render('create', Array)
+#11 C:\xampp\htdocs\creditaxi\framework\web\actions\CInlineAction.php(49): ConductorController->actionCreate()
+#12 C:\xampp\htdocs\creditaxi\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\xampp\htdocs\creditaxi\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\creditaxi\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\creditaxi\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\xampp\htdocs\creditaxi\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(282): CController->run('create')
+#21 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('conductor/creat...')
+#22 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#23 C:\xampp\htdocs\creditaxi\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/creditaxi/conductor/create
+HTTP_REFERER=http://localhost/creditaxi/Conductor
+---
+2013/12/06 20:12:07 [error] [exception.CException] exception 'CException' with message 'Propiedad "Conductor"."id_cliente" no se encuentra definida.' in C:\xampp\htdocs\creditaxi\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\db\ar\CActiveRecord.php(143): CComponent->__get('id_cliente')
+#1 C:\xampp\htdocs\creditaxi\protected\views\conductor\_form.php(27): CActiveRecord->__get('id_cliente')
+#2 C:\xampp\htdocs\creditaxi\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#3 C:\xampp\htdocs\creditaxi\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#4 C:\xampp\htdocs\creditaxi\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#5 C:\xampp\htdocs\creditaxi\protected\views\conductor\create.php(18): CController->renderPartial('_form', Array)
+#6 C:\xampp\htdocs\creditaxi\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#7 C:\xampp\htdocs\creditaxi\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\creditaxi\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\creditaxi\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#10 C:\xampp\htdocs\creditaxi\protected\controllers\ConductorController.php(79): CController->render('create', Array)
+#11 C:\xampp\htdocs\creditaxi\framework\web\actions\CInlineAction.php(49): ConductorController->actionCreate()
+#12 C:\xampp\htdocs\creditaxi\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\xampp\htdocs\creditaxi\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\creditaxi\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\creditaxi\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\xampp\htdocs\creditaxi\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(282): CController->run('create')
+#21 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('conductor/creat...')
+#22 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#23 C:\xampp\htdocs\creditaxi\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/creditaxi/conductor/create
+HTTP_REFERER=http://localhost/creditaxi/Conductor
+---
