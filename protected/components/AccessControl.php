@@ -15,7 +15,7 @@ class AccessControl {
     }
     private function getAdminFlotaItems(){
         $item = array();
-        array_push($item,array('label' => 'Conductor', 'url' => array('/Conductor')));
+        array_push($item,array('label' => 'Conductor', 'url' => array('/Conductor/admin')));
         array_push($item,array('label' => 'Taxi', 'url' => array('/Taxi/admin')));
         array_push($item,array('label' => 'Flota', 'url' => array('/flota/admin')));
         return $item;

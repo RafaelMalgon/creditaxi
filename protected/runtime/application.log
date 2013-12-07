@@ -826,3 +826,339 @@ Stack trace:
 REQUEST_URI=/creditaxi/taxi/CAU123
 HTTP_REFERER=http://localhost/creditaxi/Taxi/admin
 ---
+2013/12/07 03:27:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "CAU123" solicitada.' in C:\xampp\htdocs\creditaxi\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\web\CController.php(270): CController->missingAction('CAU123')
+#1 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(282): CController->run('CAU123')
+#2 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('taxi/CAU123')
+#3 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\creditaxi\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/creditaxi/taxi/CAU123
+HTTP_REFERER=http://localhost/creditaxi/Taxi/admin
+---
+2013/12/07 03:27:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "CAU123" solicitada.' in C:\xampp\htdocs\creditaxi\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\web\CController.php(270): CController->missingAction('CAU123')
+#1 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(282): CController->run('CAU123')
+#2 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('taxi/CAU123')
+#3 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\creditaxi\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/creditaxi/taxi/CAU123
+HTTP_REFERER=http://localhost/creditaxi/Taxi/admin
+---
+2013/12/07 03:49:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Combustible" solicitada.' in C:\xampp\htdocs\creditaxi\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\web\CController.php(270): CController->missingAction('Combustible')
+#1 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(282): CController->run('Combustible')
+#2 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('Producto/Combus...')
+#3 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\creditaxi\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/creditaxi/Producto/Combustible
+HTTP_REFERER=http://localhost/creditaxi/Cliente/admin
+---
+2013/12/07 03:50:04 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\creditaxi\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\creditaxi\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\creditaxi\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\creditaxi\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\creditaxi\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(282): CController->run('admin')
+#8 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('producto/admin')
+#9 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\creditaxi\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/creditaxi/producto/admin
+HTTP_REFERER=http://localhost/creditaxi/producto/view/2
+---
+2013/12/07 04:09:48 [error] [php] Use of undefined constant php - assumed 'php' (C:\xampp\htdocs\creditaxi\protected\views\cliente\_form.php:26)
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\web\CController.php(869): ClienteController->renderFile()
+#1 C:\xampp\htdocs\creditaxi\protected\views\cliente\create.php(18): ClienteController->renderPartial()
+#2 C:\xampp\htdocs\creditaxi\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\creditaxi\framework\web\CBaseController.php(95): ClienteController->renderInternal()
+#4 C:\xampp\htdocs\creditaxi\framework\web\CController.php(869): ClienteController->renderFile()
+#5 C:\xampp\htdocs\creditaxi\framework\web\CController.php(782): ClienteController->renderPartial()
+#6 C:\xampp\htdocs\creditaxi\protected\controllers\ClienteController.php(80): ClienteController->render()
+#7 C:\xampp\htdocs\creditaxi\framework\web\actions\CInlineAction.php(49): ClienteController->actionCreate()
+#8 C:\xampp\htdocs\creditaxi\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(133): ClienteController->runAction()
+#10 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#11 C:\xampp\htdocs\creditaxi\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#12 C:\xampp\htdocs\creditaxi\framework\web\filters\CInlineFilter.php(58): ClienteController->filterAccessControl()
+#13 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#14 C:\xampp\htdocs\creditaxi\framework\web\CController.php(291): CFilterChain->run()
+#15 C:\xampp\htdocs\creditaxi\framework\web\CController.php(265): ClienteController->runActionWithFilters()
+#16 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(282): ClienteController->run()
+#17 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\creditaxi\index.php(13): CWebApplication->run()
+REQUEST_URI=/creditaxi/cliente/create
+in C:\xampp\htdocs\creditaxi\protected\views\cliente\_form.php (26)
+in C:\xampp\htdocs\creditaxi\protected\views\cliente\create.php (18)
+in C:\xampp\htdocs\creditaxi\protected\controllers\ClienteController.php (80)
+2013/12/07 04:15:02 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`creditaxi`.`cliente`, CONSTRAINT `cliente_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `usuario` (`idUsuario`) ON DELETE CASCADE ON UPDATE CASCADE). La sentencia SQL ejecutada fue: INSERT INTO `cliente` (`id_cliente`, `nombre`, `telefono`, `correo`, `id_rol`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4).
+in C:\xampp\htdocs\creditaxi\protected\controllers\ClienteController.php (74)
+in C:\xampp\htdocs\creditaxi\index.php (13)
+2013/12/07 04:15:02 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`creditaxi`.`cliente`, CONSTRAINT `cliente_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `usuario` (`idUsuario`) ON DELETE CASCADE ON UPDATE CASCADE). The SQL statement executed was: INSERT INTO `cliente` (`id_cliente`, `nombre`, `telefono`, `correo`, `id_rol`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4)' in C:\xampp\htdocs\creditaxi\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\db\ar\CActiveRecord.php(1023): CDbCommand->execute()
+#1 C:\xampp\htdocs\creditaxi\framework\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\creditaxi\protected\controllers\ClienteController.php(74): CActiveRecord->save()
+#3 C:\xampp\htdocs\creditaxi\framework\web\actions\CInlineAction.php(49): ClienteController->actionCreate()
+#4 C:\xampp\htdocs\creditaxi\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\creditaxi\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\creditaxi\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\creditaxi\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\creditaxi\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('cliente/create')
+#14 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\creditaxi\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/creditaxi/cliente/create
+HTTP_REFERER=http://localhost/creditaxi/cliente/create
+---
+2013/12/07 04:22:35 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '123456' for key 'UQ_Conductor_placa'. La sentencia SQL ejecutada fue: INSERT INTO `conductor` (`id_conductor`, `placa`) VALUES (:yp0, :yp1).
+in C:\xampp\htdocs\creditaxi\protected\controllers\ConductorController.php (73)
+in C:\xampp\htdocs\creditaxi\index.php (13)
+2013/12/07 04:22:35 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '123456' for key 'UQ_Conductor_placa'. The SQL statement executed was: INSERT INTO `conductor` (`id_conductor`, `placa`) VALUES (:yp0, :yp1)' in C:\xampp\htdocs\creditaxi\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\db\ar\CActiveRecord.php(1023): CDbCommand->execute()
+#1 C:\xampp\htdocs\creditaxi\framework\db\ar\CActiveRecord.php(795): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\creditaxi\protected\controllers\ConductorController.php(73): CActiveRecord->save()
+#3 C:\xampp\htdocs\creditaxi\framework\web\actions\CInlineAction.php(49): ConductorController->actionCreate()
+#4 C:\xampp\htdocs\creditaxi\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\creditaxi\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\creditaxi\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\creditaxi\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\creditaxi\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('conductor/creat...')
+#14 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\creditaxi\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/creditaxi/conductor/create
+HTTP_REFERER=http://localhost/creditaxi/conductor/create
+---
+2013/12/07 04:26:07 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'CAU123' for key 'UQ_Conductor_placa'. La sentencia SQL ejecutada fue: UPDATE `conductor` SET `id_conductor`=:yp0, `placa`=:yp1 WHERE `conductor`.`id_conductor`=1324.
+in C:\xampp\htdocs\creditaxi\protected\controllers\ConductorController.php (97)
+in C:\xampp\htdocs\creditaxi\index.php (13)
+2013/12/07 04:26:07 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'CAU123' for key 'UQ_Conductor_placa'. The SQL statement executed was: UPDATE `conductor` SET `id_conductor`=:yp0, `placa`=:yp1 WHERE `conductor`.`id_conductor`=1324' in C:\xampp\htdocs\creditaxi\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\db\ar\CActiveRecord.php(1691): CDbCommand->execute()
+#1 C:\xampp\htdocs\creditaxi\framework\db\ar\CActiveRecord.php(1070): CActiveRecord->updateByPk('1324', Array)
+#2 C:\xampp\htdocs\creditaxi\framework\db\ar\CActiveRecord.php(795): CActiveRecord->update(NULL)
+#3 C:\xampp\htdocs\creditaxi\protected\controllers\ConductorController.php(97): CActiveRecord->save()
+#4 [internal function]: ConductorController->actionUpdate('1324')
+#5 C:\xampp\htdocs\creditaxi\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ConductorController), Array)
+#6 C:\xampp\htdocs\creditaxi\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ConductorController), Object(ReflectionMethod), Array)
+#7 C:\xampp\htdocs\creditaxi\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\xampp\htdocs\creditaxi\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\creditaxi\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\creditaxi\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\creditaxi\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(282): CController->run('update')
+#16 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('conductor/updat...')
+#17 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\creditaxi\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/creditaxi/conductor/update/1324
+HTTP_REFERER=http://localhost/creditaxi/conductor/update/1324
+---
+2013/12/07 04:29:09 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'CAU123' for key 'UQ_Conductor_placa'. La sentencia SQL ejecutada fue: UPDATE `conductor` SET `id_conductor`=:yp0, `placa`=:yp1 WHERE `conductor`.`id_conductor`=1324.
+in C:\xampp\htdocs\creditaxi\protected\controllers\ConductorController.php (101)
+in C:\xampp\htdocs\creditaxi\index.php (13)
+2013/12/07 04:29:09 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'CAU123' for key 'UQ_Conductor_placa'. The SQL statement executed was: UPDATE `conductor` SET `id_conductor`=:yp0, `placa`=:yp1 WHERE `conductor`.`id_conductor`=1324' in C:\xampp\htdocs\creditaxi\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\db\ar\CActiveRecord.php(1691): CDbCommand->execute()
+#1 C:\xampp\htdocs\creditaxi\framework\db\ar\CActiveRecord.php(1070): CActiveRecord->updateByPk('1324', Array)
+#2 C:\xampp\htdocs\creditaxi\framework\db\ar\CActiveRecord.php(795): CActiveRecord->update(NULL)
+#3 C:\xampp\htdocs\creditaxi\protected\controllers\ConductorController.php(101): CActiveRecord->save()
+#4 [internal function]: ConductorController->actionUpdate('1324')
+#5 C:\xampp\htdocs\creditaxi\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ConductorController), Array)
+#6 C:\xampp\htdocs\creditaxi\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ConductorController), Object(ReflectionMethod), Array)
+#7 C:\xampp\htdocs\creditaxi\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#10 C:\xampp\htdocs\creditaxi\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\creditaxi\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#12 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\creditaxi\framework\web\CController.php(291): CFilterChain->run()
+#14 C:\xampp\htdocs\creditaxi\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(282): CController->run('update')
+#16 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('conductor/updat...')
+#17 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\creditaxi\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/creditaxi/conductor/update/1324
+HTTP_REFERER=http://localhost/creditaxi/conductor/update/1324
+---
+2013/12/07 04:29:32 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'CAU123' for key 'UQ_Conductor_placa'. La sentencia SQL ejecutada fue: INSERT INTO `conductor` (`id_conductor`, `placa`) VALUES (:yp0, :yp1).
+in C:\xampp\htdocs\creditaxi\protected\controllers\ConductorController.php (74)
+in C:\xampp\htdocs\creditaxi\index.php (13)
+2013/12/07 04:29:32 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No se puede duplicar el conductor de un taxi.' in C:\xampp\htdocs\creditaxi\protected\controllers\ConductorController.php:82
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\web\actions\CInlineAction.php(49): ConductorController->actionCreate()
+#1 C:\xampp\htdocs\creditaxi\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#4 C:\xampp\htdocs\creditaxi\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\creditaxi\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\creditaxi\framework\web\CController.php(291): CFilterChain->run()
+#8 C:\xampp\htdocs\creditaxi\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(282): CController->run('create')
+#10 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('conductor/creat...')
+#11 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\creditaxi\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/creditaxi/conductor/create
+HTTP_REFERER=http://localhost/creditaxi/conductor/create
+---
+2013/12/07 04:40:13 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in C:\xampp\htdocs\creditaxi\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\creditaxi\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\creditaxi\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\creditaxi\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\creditaxi\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('taxi/view/XXX99...')
+#10 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\creditaxi\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/creditaxi/taxi/view/XXX999
+HTTP_REFERER=http://localhost/creditaxi/taxi/create
+---
+2013/12/07 04:40:52 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in C:\xampp\htdocs\creditaxi\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\creditaxi\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\creditaxi\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\creditaxi\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\creditaxi\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('taxi/view/AAA11...')
+#10 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\creditaxi\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/creditaxi/taxi/view/AAA111
+HTTP_REFERER=http://localhost/creditaxi/taxi/create
+---
+2013/12/07 04:41:40 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in C:\xampp\htdocs\creditaxi\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\creditaxi\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\creditaxi\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\creditaxi\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\creditaxi\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('taxi/view/AAA11...')
+#10 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\creditaxi\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/creditaxi/taxi/view/AAA111
+HTTP_REFERER=http://localhost/creditaxi/taxi/admin
+---
+2013/12/07 04:41:46 [error] [exception.CHttpException.400] exception 'CHttpException' with message 'Su solicitud es inválida.' in C:\xampp\htdocs\creditaxi\framework\web\CController.php:336
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\web\CController.php(309): CController->invalidActionParams(Object(CInlineAction))
+#1 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#2 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\creditaxi\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#4 C:\xampp\htdocs\creditaxi\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#5 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#6 C:\xampp\htdocs\creditaxi\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\creditaxi\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(282): CController->run('view')
+#9 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('taxi/view/AAA11...')
+#10 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\creditaxi\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/creditaxi/taxi/view/AAA111
+HTTP_REFERER=http://localhost/creditaxi/taxi/admin
+---
+2013/12/07 04:43:12 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`creditaxi`.`conductor`, CONSTRAINT `FK_conduce_Taxi` FOREIGN KEY (`placa`) REFERENCES `taxi` (`placa`)). La sentencia SQL ejecutada fue: DELETE FROM `taxi` WHERE `taxi`.`placa`='123456'.
+in C:\xampp\htdocs\creditaxi\protected\controllers\TaxiController.php (113)
+in C:\xampp\htdocs\creditaxi\index.php (13)
+2013/12/07 04:43:12 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`creditaxi`.`conductor`, CONSTRAINT `FK_conduce_Taxi` FOREIGN KEY (`placa`) REFERENCES `taxi` (`placa`)). The SQL statement executed was: DELETE FROM `taxi` WHERE `taxi`.`placa`='123456'' in C:\xampp\htdocs\creditaxi\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\db\ar\CActiveRecord.php(1745): CDbCommand->execute()
+#1 C:\xampp\htdocs\creditaxi\framework\db\ar\CActiveRecord.php(1168): CActiveRecord->deleteByPk('123456')
+#2 C:\xampp\htdocs\creditaxi\protected\controllers\TaxiController.php(113): CActiveRecord->delete()
+#3 [internal function]: TaxiController->actionDelete('123456')
+#4 C:\xampp\htdocs\creditaxi\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(TaxiController), Array)
+#5 C:\xampp\htdocs\creditaxi\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(TaxiController), Object(ReflectionMethod), Array)
+#6 C:\xampp\htdocs\creditaxi\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\creditaxi\framework\web\CController.php(1116): CFilterChain->run()
+#9 C:\xampp\htdocs\creditaxi\framework\web\filters\CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#10 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp\htdocs\creditaxi\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\creditaxi\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\creditaxi\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\creditaxi\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(282): CController->run('delete')
+#18 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('taxi/delete')
+#19 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\creditaxi\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/creditaxi/taxi/delete?id=123456&ajax=taxi-grid
+HTTP_REFERER=http://localhost/creditaxi/taxi/admin
+---
+2013/12/07 04:43:26 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`creditaxi`.`conductor`, CONSTRAINT `FK_conduce_Taxi` FOREIGN KEY (`placa`) REFERENCES `taxi` (`placa`)). La sentencia SQL ejecutada fue: DELETE FROM `taxi` WHERE `taxi`.`placa`='CAU123'.
+in C:\xampp\htdocs\creditaxi\protected\controllers\TaxiController.php (113)
+in C:\xampp\htdocs\creditaxi\index.php (13)
+2013/12/07 04:43:26 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1451 Cannot delete or update a parent row: a foreign key constraint fails (`creditaxi`.`conductor`, CONSTRAINT `FK_conduce_Taxi` FOREIGN KEY (`placa`) REFERENCES `taxi` (`placa`)). The SQL statement executed was: DELETE FROM `taxi` WHERE `taxi`.`placa`='CAU123'' in C:\xampp\htdocs\creditaxi\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\db\ar\CActiveRecord.php(1745): CDbCommand->execute()
+#1 C:\xampp\htdocs\creditaxi\framework\db\ar\CActiveRecord.php(1168): CActiveRecord->deleteByPk('CAU123')
+#2 C:\xampp\htdocs\creditaxi\protected\controllers\TaxiController.php(113): CActiveRecord->delete()
+#3 [internal function]: TaxiController->actionDelete('CAU123')
+#4 C:\xampp\htdocs\creditaxi\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(TaxiController), Array)
+#5 C:\xampp\htdocs\creditaxi\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(TaxiController), Object(ReflectionMethod), Array)
+#6 C:\xampp\htdocs\creditaxi\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\creditaxi\framework\web\CController.php(1116): CFilterChain->run()
+#9 C:\xampp\htdocs\creditaxi\framework\web\filters\CInlineFilter.php(58): CController->filterPostOnly(Object(CFilterChain))
+#10 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#11 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#12 C:\xampp\htdocs\creditaxi\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\creditaxi\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#14 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#15 C:\xampp\htdocs\creditaxi\framework\web\CController.php(291): CFilterChain->run()
+#16 C:\xampp\htdocs\creditaxi\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(282): CController->run('delete')
+#18 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('taxi/delete')
+#19 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\creditaxi\index.php(13): CApplication->run()
+#21 {main}
+REQUEST_URI=/creditaxi/taxi/delete?id=CAU123&ajax=taxi-grid
+HTTP_REFERER=http://localhost/creditaxi/taxi/admin
+---

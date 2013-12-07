@@ -70,6 +70,7 @@ class ClienteController extends Controller
 		if($this->getPost('Cliente')!=null)
 		{
 			$model->setAttributes($this->getPost('Cliente'));
+                        $model->id_rol=2;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id_cliente));
 		}

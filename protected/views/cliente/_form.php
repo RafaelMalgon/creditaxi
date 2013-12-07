@@ -22,10 +22,10 @@
 	</div>
 
 	<div  class="row">
-                <?php $rol=2; ?>
-		<?php echo $form->labelEx($model,'id_rol'); ?>
-		<?php echo $form->textField($model,'id_rol'); ?>
-		<?php echo $form->error($model,'id_rol'); ?>
+                
+		<?php // echo $form->labelEx($model,'id_rol'); ?>
+		<?php // echo $form->textField($model,'id_rol'); ?>
+		<?php // echo $form->error($model,'id_rol'); ?>
 	</div>
 
 	<div class="row">
