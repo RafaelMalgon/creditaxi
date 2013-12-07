@@ -11,7 +11,7 @@
 	'enableAjaxValidation'=>false,
 )); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+	<p class="note">Campos con <span class="required">*</span> son requeridos.</p>
 
 	<?php echo $form->errorSummary($model); ?>
 
@@ -23,7 +23,8 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'id_flota'); ?>
-		<?php echo $form->textField($model,'id_flota'); ?>
+		<?php // echo $form->textField($model,'id_flota'); ?>
+                <?php echo CHtml::dropDownList('Taxi[id_flota]',$model->id_flota,CHtml::listData(Flota::model()->findAll(), "id_flota", "id_flota")); ?>
 		<?php echo $form->error($model,'id_flota'); ?>
 	</div>
 

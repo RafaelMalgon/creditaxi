@@ -45,8 +45,9 @@
 	<div class="clear"></div>
 
 	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?> by My Company.<br/>
-		All Rights Reserved.<br/>
+		Copyright &copy; <?php echo date('Y'); ?> Universidad Distital Francisco Jose de Caldas.<br/>
+		Diego Mauricio Ortiz.<br/>
+                Rafael Malagon Chacon.<br/>
 		<?php echo Yii::powered(); ?>
 	</div><!-- footer -->
 

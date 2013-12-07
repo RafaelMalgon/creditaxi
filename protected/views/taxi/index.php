@@ -7,8 +7,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Taxi', 'url'=>array('create')),
-	array('label'=>'Manage Taxi', 'url'=>array('admin')),
+	array('label'=>'Crear Taxi', 'url'=>array('create')),
+	array('label'=>'Gestionar Taxi', 'url'=>array('admin')),
 );
 ?>
 

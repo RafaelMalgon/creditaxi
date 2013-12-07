@@ -16,13 +16,14 @@ class AccessControl {
     private function getAdminFlotaItems(){
         $item = array();
         array_push($item,array('label' => 'Conductor', 'url' => array('/Conductor')));
-        array_push($item,array('label' => 'Taxi', 'url' => array('/Taxi')));
+        array_push($item,array('label' => 'Taxi', 'url' => array('/Taxi/admin')));
+        array_push($item,array('label' => 'Flota', 'url' => array('/flota/admin')));
         return $item;
     }
     private function getAdminGasolineraItems(){
         $item = array();
-        array_push($item,array('label' => 'Taxi', 'url' => array('/Taxi/sobrecupo')));
-        array_push($item,array('label' => 'Cliente', 'url' => array('/Cliente')));
+        array_push($item,array('label' => 'Taxi', 'url' => array('/Taxi/admin')));
+        array_push($item,array('label' => 'Cliente', 'url' => array('/Cliente/admin')));
         return $item;
     }
     private function getAdminAplicacionItems(){

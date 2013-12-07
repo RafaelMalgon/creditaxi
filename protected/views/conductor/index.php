@@ -7,12 +7,12 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Create Conductor', 'url'=>array('create')),
-	array('label'=>'Manage Conductor', 'url'=>array('admin')),
+	array('label'=>'Crear Conductor', 'url'=>array('create')),
+	array('label'=>'Gestionar Conductores', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Conductors</h1>
+<h1>Conductores</h1>
 
 <?php $this->widget('zii.widgets.CListView', array(
 	'dataProvider'=>$dataProvider,

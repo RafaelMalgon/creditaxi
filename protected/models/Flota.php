@@ -67,9 +67,9 @@ class Flota extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id_flota' => 'Id Flota',
-			'id_cliente' => 'Id Cliente',
-			'sobrecupoAgotado' => 'Sobrecupo Agotado',
+			'id_flota' => 'Flota numero',
+			'id_cliente' => 'Cedula Cliente',
+			'sobrecupoAgotado' => 'Saldo sobrecupo',
 		);
 	}
 

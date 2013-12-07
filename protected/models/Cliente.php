@@ -73,8 +73,8 @@ class Cliente extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id_cliente' => 'Id Cliente',
-			'id_rol' => 'Id Rol',
+			'id_cliente' => 'Cedula',
+			'id_rol' => 'Rol',
 			'nombre' => 'Nombre',
 			'telefono' => 'Telefono',
 			'correo' => 'Correo',
