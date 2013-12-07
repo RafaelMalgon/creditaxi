@@ -11,7 +11,7 @@ $this->menu=array(
 	//array('label'=>'List Flota', 'url'=>array('index')),
 	array('label'=>'Crear Flota', 'url'=>array('create')),
 	array('label'=>'Actualizar Flota', 'url'=>array('update', 'id'=>$model->id_flota)),
-	array('label'=>'Eliminar Flota', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id_flota),'confirm'=>'Esta seguro que quiere eliminar este elemento?')),
+	array('label'=>'Eliminar Flota', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id_flota),'confirm'=>'¿Esta seguro que desea eliminar este elemento?')),
 	array('label'=>'Gestionar Flota', 'url'=>array('admin')),
 );
 ?>

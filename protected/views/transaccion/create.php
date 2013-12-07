@@ -8,11 +8,11 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Transaccion', 'url'=>array('index')),
-	array('label'=>'Manage Transaccion', 'url'=>array('admin')),
+	//array('label'=>'List Transaccion', 'url'=>array('index')),
+	array('label'=>'Gestionar Transaccion', 'url'=>array('admin')),
 );
 ?>
 
-<h1>Create Transaccion</h1>
+<h1>Crear Transaccion</h1>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>

@@ -7,7 +7,7 @@ class AccessControl {
         array_push($menu, array('label' => 'Administrar Flota', 'items' => $this->getAdminFlotaItems(), 'visible' => !Yii::app()->user->isGuest));
         array_push($menu, array('label' => 'Administrar Gasolinera', 'items' => $this->getAdminGasolineraItems(), 'visible' => !Yii::app()->user->isGuest));
         array_push($menu, array('label' => 'Parametrizar Aplicacion', 'items' => $this->getAdminAplicacionItems(), 'visible' => !Yii::app()->user->isGuest));
-        array_push($menu, array('label' => 'Realizar Venta', 'url' =>array('/Transaccion/') , 'visible' => !Yii::app()->user->isGuest));
+        array_push($menu, array('label' => 'Realizar Venta', 'url' =>array('/Transaccion/Admin') , 'visible' => !Yii::app()->user->isGuest));
         foreach ($this->getBasicItems() as $item){
             array_push($menu, $item);
         }
@@ -28,7 +28,7 @@ class AccessControl {
     }
     private function getAdminAplicacionItems(){
         $item = array();
-        array_push($item,array('label' => 'Combustible', 'url' => array('/Producto/Combustible')));
+        array_push($item,array('label' => 'Combustible', 'url' => array('/Producto/Admin')));
         array_push($item,array('label' => 'Lavada', 'url' => array('/Producto/Lavada')));
         return $item;
     }

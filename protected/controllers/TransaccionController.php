@@ -37,7 +37,7 @@ class TransaccionController extends Controller
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
 				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
@@ -66,7 +66,7 @@ class TransaccionController extends Controller
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
-
+                $model->fecha = new CDbExpression('NOW()');
 		if($this->getPost('Transaccion') != null)
 		{
 			$model->setAttributes($this->getPost('Transaccion'));
