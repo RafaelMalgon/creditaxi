@@ -5,7 +5,11 @@
         <group>
             <file>file:/C:/xampp/htdocs/crediTaxi/protected/models/Usuario.php</file>
             <file>file:/C:/xampp/htdocs/crediTaxi/protected/components/UserIdentity.php</file>
+            <file>file:/C:/xampp/htdocs/crediTaxi/protected/models/Cliente.php</file>
             <file>file:/C:/xampp/htdocs/crediTaxi/protected/models/LoginForm.php</file>
+            <file>file:/C:/xampp/htdocs/crediTaxi/protected/controllers/SiteController.php</file>
+            <file>file:/C:/xampp/htdocs/crediTaxi/protected/views/layouts/main.php</file>
+            <file>file:/C:/xampp/htdocs/crediTaxi/protected/components/AccessControl.php</file>
         </group>
     </open-files>
 </project-private>
