@@ -137,6 +137,8 @@ class FlotaController extends Controller
 		$model=new Flota('search');
 		$model->unsetAttributes();  // clear any default values
                 $this->asignarSobrecupo();
+                $model->obtenerValorSobrecupo(12345);
+                var_dump($model->obtenerValorSobrecupo(55));
 		if(isset($_GET['Flota']))
 			$model->attributes=$_GET['Flota'];
 
@@ -187,7 +189,7 @@ class FlotaController extends Controller
                  //$rows = Yii::app()->db->createCommand($sql2)->queryAll(); 
                  //var_dump($row['id_cliente']);                 
                  //var_dump($result);
-                 echo "$result";
+                 //echo "$result";
             }      
             
             return $result;  

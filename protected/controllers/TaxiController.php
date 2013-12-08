@@ -134,7 +134,8 @@ class TaxiController extends Controller
 	public function actionAdmin()
 	{
 		$model=new Taxi('search');
-		$model->unsetAttributes();  // clear any default values
+                $asd=$model->distribuirCupo();
+                var_dump($asd);
 		if(isset($_GET['Taxi']))
 			$model->attributes=$_GET['Taxi'];
 

@@ -95,4 +95,14 @@ class Flota extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+        public function obtenerValorSobrecupo($id){
+            $resultado = Yii::app()->db->createCommand(
+                    "SELECT cr.cupoAprobado * 0.01 , cupoAprobado FROM credito cr , cliente cl WHERE cr.id_cliente="
+                    . (int)$id)->queryColumn();
+            
+            if($resultado != NULL){
+                return Conversion::conversionDouble(current($resultado));
+            }else
+                return 0;
+        }
 }
