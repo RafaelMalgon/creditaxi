@@ -6,7 +6,6 @@ class AccessControl {
         $menu = array();
         if (Yii::app()->session['Rol'] == "Cliente") {
             array_push($menu, array('label' => 'Administrar Flota', 'items' => $this->getAdminFlotaItems(), 'visible' => !Yii::app()->user->isGuest));
-            array_push($menu, array('label' => 'Administrar Flota', 'items' => $this->getAdminFlotaItems(), 'visible' => !Yii::app()->user->isGuest));
         } else if (Yii::app()->session['Rol'] == "Administrador") {
             array_push($menu, array('label' => 'Administrar Gasolinera', 'items' => $this->getAdminGasolineraItems(), 'visible' => !Yii::app()->user->isGuest));
             array_push($menu, array('label' => 'Parametrizar Aplicacion', 'items' => $this->getAdminAplicacionItems(), 'visible' => !Yii::app()->user->isGuest));
