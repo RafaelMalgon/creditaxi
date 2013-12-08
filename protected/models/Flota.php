@@ -7,6 +7,7 @@
  * @property integer $id_flota
  * @property integer $id_cliente
  * @property integer $sobrecupoAgotado
+ * @property integer $sobrecupoAsignado
  *
  * The followings are the available model relations:
  * @property Cliente $idCliente
@@ -41,10 +42,10 @@ class Flota extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('id_cliente', 'required'),
-			array('id_cliente, sobrecupoAgotado', 'numerical', 'integerOnly'=>true),
+			array('id_cliente, sobrecupoAgotado, sobrecupoAsignado', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id_flota, id_cliente, sobrecupoAgotado', 'safe', 'on'=>'search'),
+			array('id_flota, id_cliente, sobrecupoAgotado, sobrecupoAsignado', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -67,9 +68,10 @@ class Flota extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id_flota' => 'Flota numero',
-			'id_cliente' => 'Cedula Cliente',
-			'sobrecupoAgotado' => 'Saldo sobrecupo',
+			'id_flota' => 'Id Flota',
+			'id_cliente' => 'Id Cliente',
+			'sobrecupoAgotado' => 'Sobrecupo Agotado',
+			'sobrecupoAsignado' => 'Sobrecupo Asignado',
 		);
 	}
 
@@ -87,6 +89,7 @@ class Flota extends CActiveRecord
 		$criteria->compare('id_flota',$this->id_flota);
 		$criteria->compare('id_cliente',$this->id_cliente);
 		$criteria->compare('sobrecupoAgotado',$this->sobrecupoAgotado);
+		$criteria->compare('sobrecupoAsignado',$this->sobrecupoAsignado);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

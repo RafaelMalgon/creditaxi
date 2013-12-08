@@ -102,4 +102,15 @@ class Cliente extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+        
+         public function renderAddress($data,$row)
+        {
+          // ... generate the output for a full address
+ 
+          // Params:
+          // $data ... the current row data   
+         // $row ... the row index  
+             $theCellValue= 1;
+         return $theCellValue;    
+        }
 }

@@ -161,6 +161,7 @@ class ClienteController extends Controller
 	}
 
 	/**
+         * 
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
@@ -187,4 +188,21 @@ class ClienteController extends Controller
 			Yii::app()->end();
 		}
 	}
+        protected function gridDataColumn($data,$row)
+        {
+             $sql = 'SELECT cupoAprobado FROM credito cr , cliente cl ';
+             $sql .= 'WHERE cr.id_cliente='.$data->id_cliente ;
+             
+             $rows = Yii::app()->db->createCommand($sql)->queryAll();
+             //var_dump($rows);
+            
+             $result = '';
+             if(!empty($rows))
+                foreach ($rows as $row) 
+                {
+                 $result = $row['cupoAprobado'];
+            }      
+            return $result;  
+            
+        }
 }
