@@ -9,7 +9,7 @@
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'cliente-form',
 	'enableAjaxValidation'=>false, )); 
-    if($a->isNewRecord==false) { $b= Usuario::model()->findByPk($a->idUsuario); }
+    if($a->isNewRecord==false) { $b= Usuario::model()->findByPk($a->id_cliente); }
     
     echo $form->errorSummary(array($a,$b)); ?>
         
@@ -59,6 +59,12 @@
 		<?php echo $form->labelEx($a,'correo'); ?>
 		<?php echo $form->textField($a,'correo',array('size'=>50,'maxlength'=>50)); ?>
 		<?php echo $form->error($a,'correo'); ?>
+	</div>
+        
+	<div class="row">
+		<?php echo $form->labelEx($a,'Activo'); ?>
+		<?php echo $form->textField($a,'Activo'); ?>
+		<?php echo $form->error($a,'Activo'); ?>
 	</div>
 
 	<div class="row buttons">

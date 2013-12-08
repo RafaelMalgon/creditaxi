@@ -103,22 +103,24 @@ class ClienteController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel($id);
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if($this->getPost('Cliente')!=null)
-		{
-			$model->setAttributes($this->getPost('Cliente'));
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id_cliente));
-		}
-
-		$this->render('update',array(
-			'model'=>$model,
-		));
-	}
+                $a= new Cliente;
+                $b= new Usuario;
+               // $this->performAjaxValidation(array($a,$b));
+                $a=$this->loadModel($id);
+                
+                if(isset($_POST['Cliente'],$_POST['Usuario']))
+                {
+                    $a->attributes=$_POST['Cliente'];
+                    $b->attributes=$_POST['Usuario'];
+                
+                    $b->idUsuario=$a->id_cliente;
+                    $b->setIsNewRecord(false);
+                    
+                    if($a->save() && $b->update())
+                    $this->redirect(array('view','id'=>$a->id_cliente));
+                }
+                $this->render('update',array('a'=>$a,'b'=>$b));
+        }
 
 	/**
 	 * Deletes a particular model.
