@@ -27,9 +27,22 @@
 		<?php echo $form->textField($model,'sobrecupoAgotado'); ?>
 		<?php echo $form->error($model,'sobrecupoAgotado'); ?>
 	</div>
+        
+        <?php if(!$model->isNewRecord){ ?>
+	<div class="row">
+         <?php 
+                    $listG['1']="Desaprobado";
+                    $listG['0']="Aprobar";
+        ?>
+		<?php echo $form->labelEx($model,'sobrecupoApobado'); ?>
+		<?php  echo $form->textField($model,'sobrecupoApobado'); ?>
+                <?php //  echo CHtml::dropDownList('flota[sobrecupoApobado]', $model->sobrecupoApobado, $listG); ?>
+		<?php echo $form->error($model,'sobrecupoApobado'); ?>
+	</div>
+        <?php } ?>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
