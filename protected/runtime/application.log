@@ -486,3 +486,37 @@ REQUEST_URI=/creditaxi/cliente/update?id=55
 in C:\xampp\htdocs\creditaxi\protected\views\cliente\_form.php (12)
 in C:\xampp\htdocs\creditaxi\protected\views\cliente\update.php (21)
 in C:\xampp\htdocs\creditaxi\protected\controllers\ClienteController.php (120)
+2013/12/09 00:17:45 [error] [php] array_push() expects parameter 1 to be array, null given (C:\xampp\htdocs\crediTaxi\protected\components\AccessControl.php:7)
+Stack trace:
+#0 C:\xampp\htdocs\crediTaxi\framework\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\crediTaxi\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#2 C:\xampp\htdocs\crediTaxi\framework\web\widgets\CContentDecorator.php(76): SiteController->renderFile()
+#3 C:\xampp\htdocs\crediTaxi\framework\web\widgets\CContentDecorator.php(54): CContentDecorator->decorate()
+#4 C:\xampp\htdocs\crediTaxi\framework\web\widgets\COutputProcessor.php(44): CContentDecorator->processOutput()
+#5 C:\xampp\htdocs\crediTaxi\framework\web\CBaseController.php(206): CContentDecorator->run()
+#6 C:\xampp\htdocs\crediTaxi\framework\web\CBaseController.php(300): SiteController->endWidget()
+#7 C:\xampp\htdocs\crediTaxi\protected\views\layouts\column1.php(6): SiteController->endContent()
+#8 C:\xampp\htdocs\crediTaxi\framework\web\CBaseController.php(126): require()
+#9 C:\xampp\htdocs\crediTaxi\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#10 C:\xampp\htdocs\crediTaxi\framework\web\CController.php(784): SiteController->renderFile()
+#11 C:\xampp\htdocs\crediTaxi\protected\controllers\SiteController.php(53): SiteController->render()
+#12 C:\xampp\htdocs\crediTaxi\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#13 C:\xampp\htdocs\crediTaxi\framework\web\CController.php(308): CInlineAction->runWithParams()
+#14 C:\xampp\htdocs\crediTaxi\framework\web\CController.php(286): SiteController->runAction()
+#15 C:\xampp\htdocs\crediTaxi\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#16 C:\xampp\htdocs\crediTaxi\framework\web\CWebApplication.php(282): SiteController->run()
+#17 C:\xampp\htdocs\crediTaxi\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#18 C:\xampp\htdocs\crediTaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\crediTaxi\index.php(13): CWebApplication->run()
+REQUEST_URI=/crediTaxi/
+in C:\xampp\htdocs\crediTaxi\protected\components\AccessControl.php (7)
+in C:\xampp\htdocs\crediTaxi\protected\views\layouts\main.php (32)
+in C:\xampp\htdocs\crediTaxi\protected\views\layouts\column1.php (6)
+2013/12/09 00:26:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "logout"' in C:\xampp\htdocs\crediTaxi\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\crediTaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('logout')
+#1 C:\xampp\htdocs\crediTaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\crediTaxi\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/crediTaxi/logout
+---
