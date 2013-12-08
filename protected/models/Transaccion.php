@@ -75,8 +75,8 @@ class Transaccion extends CActiveRecord
 	{
 		return array(
 			'id_Transaccion' => 'Transaccion numero',
-			'id_vendedor' => 'Id Vendedor',
-			'id_producto' => 'Id Producto',
+			'id_vendedor' => 'Vendedor',
+			'id_producto' => 'Producto',
 			'placa' => 'Placa',
 			'valorTotal' => 'Valor',
 			'fecha' => 'Fecha',

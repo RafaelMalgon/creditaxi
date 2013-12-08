@@ -22,10 +22,10 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'id_flota'); ?>
+		<?php //echo $form->labelEx($model,'id_flota'); ?>
 		<?php // echo $form->textField($model,'id_flota'); ?>
-                <?php echo CHtml::dropDownList('Taxi[id_flota]',$model->id_flota,CHtml::listData(Flota::model()->findAll(), "id_flota", "id_flota")); ?>
-		<?php echo $form->error($model,'id_flota'); ?>
+                <?php //echo CHtml::dropDownList('Taxi[id_flota]',$model->id_flota,CHtml::listData(Flota::model()->findAll(), "id_flota", "id_flota")); ?>
+		<?php //echo $form->error($model,'id_flota'); ?>
 	</div>
 
 	<div class="row">
@@ -45,7 +45,7 @@
         <?php } ?>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
+		<?php echo CHtml::submitButton($model->isNewRecord ? 'Crear' : 'Guardar'); ?>
 	</div>
 
 <?php $this->endWidget(); ?>

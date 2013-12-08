@@ -24,15 +24,15 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'id_producto'); ?>
-		<?php  echo $form->textField($model,'id_producto'); ?>
-                <?php //echo CHtml::dropDownList('Producto[id_producto]',$model->id_producto,CHtml::listData(Producto::model()->findAll(), "id_producto", "nombre")); ?>
+		<?php //echo $form->textField($model,'id_producto'); ?>
+                <?php echo CHtml::dropDownList('Producto[id_producto]',$model->id_producto,CHtml::listData(Producto::model()->findAll(), "id_producto", "nombre")); ?>
 		<?php echo $form->error($model,'id_producto'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'placa'); ?>
-		<?php  echo $form->textField($model,'placa',array('size'=>6,'maxlength'=>6)); ?>
-                <?php //echo CHtml::dropDownList('Taxi[placa]',$model->placa,CHtml::listData(Taxi::model()->findAll(), "placa", "placa")); ?>
+		<?php //echo $form->textField($model,'placa',array('size'=>6,'maxlength'=>6)); ?>
+                <?php echo CHtml::dropDownList('Taxi[placa]',$model->placa,CHtml::listData(Taxi::model()->findAll(), "placa", "placa")); ?>
 		<?php echo $form->error($model,'placa'); ?>
 	</div>
 
