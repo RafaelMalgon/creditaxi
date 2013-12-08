@@ -24,5 +24,6 @@ $this->menu=array(
 		'id_flota',
 		'id_cliente',
 		'sobrecupoAgotado',
+                'sobrecupoApobado',
 	),
 )); ?>
