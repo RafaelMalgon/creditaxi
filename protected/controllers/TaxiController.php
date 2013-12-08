@@ -133,9 +133,15 @@ class TaxiController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Taxi('search');
-                $asd=$model->distribuirCupo();
-                var_dump($asd);
+            $cliente=Yii::app()->session['Usuario'];
+            $flota = $cliente->getRelated("flotas");
+            
+            $flota=$flota[0];            
+            
+            $model = new Taxi('serch');
+            $model->id_flota=$flota->id_flota;
+            //var_dump($flota->id_flota);
+            //die();
 		if(isset($_GET['Taxi']))
 			$model->attributes=$_GET['Taxi'];
 
