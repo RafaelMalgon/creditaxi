@@ -7,6 +7,7 @@
 return array(
     'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
     'name' => 'CrediTaxi',
+    'homeUrl'=>array('Transaccion/index'),
     'sourceLanguage'=>'es',
     // preloading 'log' component
     'preload' => array('log'),
@@ -44,7 +45,7 @@ return array(
         ),
         // uncomment the following to use a MySQL database
         'db' => array(
-            'connectionString' => 'mysql:host=localhost;dbname=creditaxi',
+            'connectionString' => 'mysql:host=192.168.1.4;dbname=creditaxi',
             'emulatePrepare' => true,
             'username' => 'usrCrediTaxi',
             'password' => 'HRt7hYQJn3LPHZdB',
