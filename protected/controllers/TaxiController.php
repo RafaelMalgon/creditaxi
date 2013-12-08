@@ -75,8 +75,11 @@ class TaxiController extends Controller
 		if($this->getPost('Taxi') != null)
 		{
 			$model->setAttributes($this->getPost('Taxi'));
-			if($model->save())
+                        
+			if($model->save()){
 				$this->redirect(array('view','id'=>$model->placa));
+                                //$cupoAsignado=$model->cupo;
+                        }
 		}
 
 		$this->render('create',array(

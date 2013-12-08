@@ -48,6 +48,7 @@ class Taxi extends CActiveRecord
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('placa, id_flota, cupo, saldoCupo', 'safe', 'on'=>'search'),
+                        array('cupo','validarCupo')
 		);
 	}
 
@@ -98,4 +99,21 @@ class Taxi extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+        public function validarCupo($cupoAsignado) {
+            $cupoTotal=10;     
+            $cliente=Yii::app()->session['Usuario'];
+            $resultado = Yii::app()->db->createCommand(
+                                "SELECT cupoAprobado  FROM credito WHERE id_cliente="
+                    .$cliente->id_cliente
+                    )->queryColumn();
+            
+            //var_dump($cliente->id_cliente);
+            var_dump($resultado);
+            //die();
+            if ($this->cupo < $resultado) {
+                $this->addError($cupoAsignado,'sobrepasa el valor del cupo de su credito.');                
+            }
+            
+            
+        }
 }
