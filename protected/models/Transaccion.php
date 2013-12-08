@@ -56,18 +56,40 @@ class Transaccion extends CActiveRecord {
         $taxi = Taxi::model()->findByPk($this->placa);
         $saldoCupo = $taxi->saldoCupo === null ? 0 : $taxi->saldoCupo;
         $saldoCupo = $saldoCupo + $this->valorTotal;
+        $error = false;
         if ($taxi->cupo === null) {
             $this->addError($attribute, 'No se ha asignado cupo al taxi seleccionado');
+            $error = true;
         } else if ($saldoCupo > $taxi->cupo && !$taxi->getRelated('idFlota')->sobrecupoApobado) {
             $this->addError($attribute, 'El valor de la venta supera el cupo aprobado, porfavor solicite un sobrecupo');
+            $error = true;
         } else if ($taxi->getRelated('idFlota')->sobrecupoApobado) {
             $flota = $taxi->getRelated('idFlota');
-            //  $sobrecupo=$flota->obtenerValorSobrecupo()-$flota->sobrecupoAgotado;
             if ($flota->sobrecupoAgotado + $this->valorTotal > $flota->obtenerValorSobrecupo()) {
                 $this->addError($attribute, 'El valor de la venta supera el valor del sobrecupo');
+                $error = true;
             }
         }
-        
+        if (!$this->hasErrors()) {
+            if ($error == false) {
+                if ($taxi->saldoCupo > 0) {
+                    if ($taxi->saldoCupo >= $this->valorTotal) {
+                        $taxi->saldoCupo = $taxi->saldoCupo - $this->valorTotal;
+                        if (!$taxi->save()) {
+                            $this->addError($attribute, 'Ha ocurrido un error al actualizar el sado, intente más tarde');
+                        }
+                    } else {
+                        $flota->sobrecupoAgotado = $this->valorTotal - $taxi->saldoCupo;
+                        $taxi->saldoCupo = 0;
+                        $flota->save();
+                        $taxi->save();
+                    }
+                } else {
+                    $flota->sobrecupoAgotado = $flota->sobrecupoAgotado + $this->valorTotal;
+                    $flota->save();
+                }
+            }
+        }
     }
 
     /**
