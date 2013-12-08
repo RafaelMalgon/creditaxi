@@ -72,7 +72,7 @@ class Producto extends CActiveRecord
 	{
 		return array(
 			'id_producto' => 'Id Producto',
-			'id_estacion_servicio' => 'Id Estacion Servicio',
+			'id_estacion_servicio' => 'Estacion de servicio numero',
 			'nombre' => 'Nombre',
 			'tipo' => 'Tipo',
 			'valor' => 'Valor',

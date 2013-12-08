@@ -8,48 +8,61 @@
 
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'cliente-form',
-	'enableAjaxValidation'=>false,
-)); ?>
-
+	'enableAjaxValidation'=>false, )); 
+    if($a->isNewRecord==false) { $b= Usuario::model()->findByPk($a->idUsuario); }
+    
+    echo $form->errorSummary(array($a,$b)); ?>
+        
 	<p class="note">Campos con <span class="required">*</span> son requeridos.</p>
 
-	<?php echo $form->errorSummary($model); ?>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'id_cliente'); ?>
-		<?php echo $form->textField($model,'id_cliente'); ?>
-		<?php echo $form->error($model,'id_cliente'); ?>
+		<?php echo $form->labelEx($a,'id_cliente'); ?>
+		<?php echo $form->textField($a,'id_cliente'); ?>
+		<?php echo $form->error($a,'id_cliente'); ?>
+	</div>
+	<div class="row">
+		<?php // $b->idUsuario = $a->id_cliente ; ?>
+		<?php  //echo $a->id_cliente ; ?>
+		<?php echo $form->labelEx($b,'idUsuario'); ?>
+		<?php echo $form->textField($b,'idUsuario'); ?>
+		<?php // echo $form->textField($b,'idUsuario',array('value'=>Yii::app()->user->getUsername(),'disabled'=>'disabled')); ?>
+		<?php  echo $form->error($b,'idUsuario'); ?>
 	</div>
 
 	<div  class="row">
-                <?php $rol=2; ?>
-		<?php echo $form->labelEx($model,'id_rol'); ?>
-		<?php echo $form->textField($model,'id_rol'); ?>
-		<?php echo $form->error($model,'id_rol'); ?>
+                
+		<?php // echo $form->labelEx($model,'id_rol'); ?>
+		<?php // echo $form->textField($model,'id_rol'); ?>
+		<?php // echo $form->error($model,'id_rol'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'nombre'); ?>
-		<?php echo $form->textField($model,'nombre',array('size'=>50,'maxlength'=>50)); ?>
-		<?php echo $form->error($model,'nombre'); ?>
+		<?php echo $form->labelEx($a,'nombre'); ?>
+		<?php echo $form->textField($a,'nombre',array('size'=>50,'maxlength'=>50)); ?>
+		<?php echo $form->error($a,'nombre'); ?>
+	</div>
+        
+	<div class="row">
+		<?php echo $form->labelEx($b,'clave'); ?>
+		<?php echo $form->textField($b,'clave',array('size'=>20,'maxlength'=>20)); ?>
+		<?php echo $form->error($b,'nombre'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'telefono'); ?>
-		<?php echo $form->textField($model,'telefono',array('size'=>15,'maxlength'=>15)); ?>
-		<?php echo $form->error($model,'telefono'); ?>
+		<?php echo $form->labelEx($a,'telefono'); ?>
+		<?php echo $form->textField($a,'telefono',array('size'=>15,'maxlength'=>15)); ?>
+		<?php echo $form->error($a,'telefono'); ?>
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'correo'); ?>
-		<?php echo $form->textField($model,'correo',array('size'=>50,'maxlength'=>50)); ?>
-		<?php echo $form->error($model,'correo'); ?>
+		<?php echo $form->labelEx($a,'correo'); ?>
+		<?php echo $form->textField($a,'correo',array('size'=>50,'maxlength'=>50)); ?>
+		<?php echo $form->error($a,'correo'); ?>
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>
-	</div>
-
-<?php $this->endWidget(); ?>
+		<?php echo CHtml::submitButton($a->isNewRecord ? 'Crear' : 'Save'); ?>
+	</div> <?php $this->endWidget(); ?>
 
 </div><!-- form -->

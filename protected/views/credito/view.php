@@ -8,15 +8,15 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Credito', 'url'=>array('index')),
-	array('label'=>'Create Credito', 'url'=>array('create')),
-	array('label'=>'Update Credito', 'url'=>array('update', 'id'=>$model->id_credito)),
-	array('label'=>'Delete Credito', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id_credito),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Credito', 'url'=>array('admin')),
+	//array('label'=>'List Credito', 'url'=>array('index')),
+	array('label'=>'Gestionar Credito', 'url'=>array('admin')),
+	array('label'=>'Crear Credito', 'url'=>array('create')),
+	array('label'=>'Actualizar Credito', 'url'=>array('update', 'id'=>$model->id_credito)),
+	array('label'=>'Eliminar Credito', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id_credito),'confirm'=>'Are you sure you want to delete this item?')),
 );
 ?>
 
-<h1>View Credito #<?php echo $model->id_credito; ?></h1>
+<h1>Vista Credito # <?php echo $model->id_credito; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

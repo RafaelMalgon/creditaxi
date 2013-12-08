@@ -8,15 +8,15 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Conductor', 'url'=>array('index')),
-	array('label'=>'Create Conductor', 'url'=>array('create')),
-	array('label'=>'Update Conductor', 'url'=>array('update', 'id'=>$model->id_conductor)),
-	array('label'=>'Delete Conductor', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id_conductor),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Conductor', 'url'=>array('admin')),
+	//array('label'=>'List Conductor', 'url'=>array('index')),
+	array('label'=>'Gestionar Conductor', 'url'=>array('admin')),
+	array('label'=>'Crear Conductor', 'url'=>array('create')),
+	array('label'=>'Actualizar Conductor', 'url'=>array('update', 'id'=>$model->id_conductor)),
+	array('label'=>'Eliminar Conductor', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id_conductor),'confirm'=>'Are you sure you want to delete this item?')),
 );
 ?>
 
-<h1>View Conductor #<?php echo $model->id_conductor; ?></h1>
+<h1>Conductor cedula # <?php echo $model->id_conductor; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

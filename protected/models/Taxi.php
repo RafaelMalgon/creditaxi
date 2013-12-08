@@ -72,7 +72,7 @@ class Taxi extends CActiveRecord
 	{
 		return array(
 			'placa' => 'Placa',
-			'id_flota' => 'Id Flota',
+			'id_flota' => 'Flota numero',
 			'cupo' => 'Cupo',
 			'saldoCupo' => 'Saldo Cupo',
 		);

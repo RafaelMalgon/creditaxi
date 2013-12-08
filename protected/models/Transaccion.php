@@ -74,11 +74,11 @@ class Transaccion extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id_Transaccion' => 'Id Transaccion',
+			'id_Transaccion' => 'Transaccion numero',
 			'id_vendedor' => 'Id Vendedor',
 			'id_producto' => 'Id Producto',
 			'placa' => 'Placa',
-			'valorTotal' => 'Valor Total',
+			'valorTotal' => 'Valor',
 			'fecha' => 'Fecha',
 		);
 	}
@@ -105,4 +105,16 @@ class Transaccion extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+        /*public function behaviors() {
+            return array(
+            'CTimestampBehavior' => array(
+            'class' => 'zii.behaviors.CTimestampBehavior',
+            'createAttribute' => 'fecha',
+            //'updateAttribute' => 'modified_date',
+            'setUpdateOnCreate' => true,
+            ),
+            );
+        }
+         * 
+         */
 }

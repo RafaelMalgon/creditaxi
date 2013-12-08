@@ -33,12 +33,16 @@
 		<?php echo $form->textField($model,'cupo'); ?>
 		<?php echo $form->error($model,'cupo'); ?>
 	</div>
-
+        
+        <?php if(!$model->isNewRecord){ ?>
+        
 	<div class="row">
 		<?php echo $form->labelEx($model,'saldoCupo'); ?>
 		<?php echo $form->textField($model,'saldoCupo'); ?>
 		<?php echo $form->error($model,'saldoCupo'); ?>
 	</div>
+        
+        <?php } ?>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>

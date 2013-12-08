@@ -8,15 +8,15 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'List Taxi', 'url'=>array('index')),
-	array('label'=>'Create Taxi', 'url'=>array('create')),
-	array('label'=>'Update Taxi', 'url'=>array('update', 'id'=>$model->placa)),
-	array('label'=>'Delete Taxi', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->placa),'confirm'=>'Are you sure you want to delete this item?')),
-	array('label'=>'Manage Taxi', 'url'=>array('admin')),
+	//array('label'=>'List Taxi', 'url'=>array('index')),
+	array('label'=>'Crear Taxi', 'url'=>array('create')),
+	array('label'=>'Actualizar Taxi', 'url'=>array('update', 'id'=>$model->placa)),
+	array('label'=>'Eliminar Taxi', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->placa),'confirm'=>'¿Esta seguro que desea eliminar este elemento?')),
+	array('label'=>'Gestionar Taxis', 'url'=>array('admin')),
 );
 ?>
 
-<h1>View Taxi #<?php echo $model->placa; ?></h1>
+<h1>Taxi con placa: <?php echo $model->placa; ?></h1>
 
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,

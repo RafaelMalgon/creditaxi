@@ -62,6 +62,7 @@ class ConductorController extends Controller
 	 */
 	public function actionCreate()
 	{
+            try {
 		$model=new Conductor;
 
 		// Uncomment the following line if AJAX validation is needed
@@ -76,7 +77,10 @@ class ConductorController extends Controller
 
 		$this->render('create',array(
 			'model'=>$model,
-		));
+		));                
+            } catch (Exception $e){
+                throw new CHttpException(500, 'No se puede duplicar el conductor de un taxi.');
+            }
 	}
 
 	/**
@@ -86,21 +90,27 @@ class ConductorController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
-		$model=$this->loadModel($id);
+            try {
+                $model=$this->loadModel($id);
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+                    // Uncomment the following line if AJAX validation is needed
+                    // $this->performAjaxValidation($model);
 
-		if($this->getPost('Conductor')!=null)
-		{
-			$model->setAttributes($this->getPost('Conductor'));
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id_conductor));
-		}
+                    if($this->getPost('Conductor')!=null)
+                    {
+                            $model->setAttributes($this->getPost('Conductor'));
+                            if($model->save())
+                                    $this->redirect(array('view','id'=>$model->id_conductor));
+                    }
 
-		$this->render('update',array(
-			'model'=>$model,
-		));
+                    $this->render('update',array(
+                            'model'=>$model,
+                    ));
+                
+            } catch (Exception $exc) {
+                throw new CHttpException(500, 'No se puede duplicar el conductor de un taxi.');
+            }
+
 	}
 
 	/**
