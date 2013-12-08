@@ -36,7 +36,7 @@ class ProductoController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('combustible','lavada'),
 				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
@@ -79,67 +79,32 @@ class ProductoController extends Controller
 		));
 	}
 
-	/**
-	 * Updates a particular model.
-	 * If update is successful, the browser will be redirected to the 'view' page.
-	 * @param integer $id the ID of the model to be updated
-	 */
-	public function actionUpdate($id)
-	{
-		$model=$this->loadModel($id);
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if($this->getPost('Producto') != null)
-		{
-			$model->setAttributes($this->getPost('Producto'));
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id_producto));
-		}
-
-		$this->render('update',array(
-			'model'=>$model,
-		));
-	}
-
-	/**
-	 * Deletes a particular model.
-	 * If deletion is successful, the browser will be redirected to the 'admin' page.
-	 * @param integer $id the ID of the model to be deleted
-	 */
-	public function actionDelete($id)
-	{
-		$this->loadModel($id)->delete();
-
-		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-		if($this->getGet('ajax')==null)
-			$this->redirect($this->getPost('returnUrl')!=null ? $this->getPost('returnUrl') : array('admin'));
-	}
-
-	/**
-	 * Lists all models.
-	 */
-	public function actionIndex()
-	{
-		$dataProvider=new CActiveDataProvider('Producto');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
-	}
-
+	
 	/**
 	 * Manages all models.
 	 */
-	public function actionAdmin()
+	public function actionCombustible()
 	{
 		$model=new Producto('search');
 		$model->unsetAttributes();  // clear any default values
+                $model->tipo='G';
 		if(isset($_GET['Producto']))
 			$model->attributes=$_GET['Producto'];
 
 		$this->render('admin',array(
-			'model'=>$model,
+			'model'=>$model,'producto'=>'Combusible',
+		));
+	}
+	public function actionLavada()
+	{
+		$model=new Producto('search');
+		$model->unsetAttributes();  // clear any default values
+                $model->tipo='L';
+		if(isset($_GET['Producto']))
+			$model->attributes=$_GET['Producto'];
+
+		$this->render('admin',array(
+			'model'=>$model,'producto'=>'Lavada',
 		));
 	}
 
@@ -150,24 +115,5 @@ class ProductoController extends Controller
 	 * @return Producto the loaded model
 	 * @throws CHttpException
 	 */
-	public function loadModel($id)
-	{
-		$model=Producto::model()->findByPk($id);
-		if($model===null)
-			throw new CHttpException(404,'The requested page does not exist.');
-		return $model;
-	}
-
-	/**
-	 * Performs the AJAX validation.
-	 * @param Producto $model the model to be validated
-	 */
-	protected function performAjaxValidation($model)
-	{
-		if($this->getPost('ajax')!=null && $this->getPost('ajax')==='producto-form')
-		{
-			echo CActiveForm::validate($model);
-			Yii::app()->end();
-		}
-	}
+	
 }
