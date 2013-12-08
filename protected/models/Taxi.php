@@ -100,17 +100,20 @@ class Taxi extends CActiveRecord
 		));
 	}
         public function validarCupo($cupoAsignado) {
-            $cupoTotal=10;     
-            $cliente=Yii::app()->session['Usuario'];
-            $resultado = Yii::app()->db->createCommand(
-                                "SELECT cupoAprobado  FROM credito WHERE id_cliente="
-                    .$cliente->id_cliente
-                    )->queryColumn();
             
-            //var_dump($cliente->id_cliente);
-            var_dump($resultado);
+            $cliente=Yii::app()->session['Usuario'];
+            $credito=$cliente->getrelated('creditos');
+            $flotas=$cliente->getrelated('flotas');
+            $valor = $credito[0]->cupoAprobado;
+            $resultado = Yii::app()->db->createCommand(
+                                " SELECT SUM(cupo)  FROM taxi WHERE id_flota="
+                                . (int)  $flotas[0]->id_flota)->queryColumn();
+            $valor2 = $valor - $resultado[0];
+            //var_dump($valor2);                       
             //die();
-            if ($this->cupo < $resultado) {
+            //var_dump($credito[0]->cupoAprobado);                       
+            
+            if ($this->cupo > $valor2) {
                 $this->addError($cupoAsignado,'sobrepasa el valor del cupo de su credito.');                
             }
             
