@@ -138,8 +138,8 @@ class FlotaController extends Controller
                 $this->asignarSobrecupo();
                 $model->obtenerValorSobrecupo(12345);
                 var_dump($model->obtenerValorSobrecupo(55));
-		if(isset($_GET['Flota']))
-			$model->attributes=$_GET['Flota'];
+		if($this->getPost('Flota') != null)
+			$model->setAttribute($this->getPost('Flota'));
 
 		$this->render('admin',array(
 			'model'=>$model,
