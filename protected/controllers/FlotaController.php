@@ -136,8 +136,8 @@ class FlotaController extends Controller
 		$model=new Flota('search');
 		$model->unsetAttributes();  // clear any default values
                 $this->asignarSobrecupo();
-                $model->obtenerValorSobrecupo(12345);
-                var_dump($model->obtenerValorSobrecupo(55));
+                //$model->obtenerValorSobrecupo(12345);
+                //var_dump($model->obtenerValorSobrecupo(55));
 		if($this->getPost('Flota') != null)
 			$model->setAttribute($this->getPost('Flota'));
 
