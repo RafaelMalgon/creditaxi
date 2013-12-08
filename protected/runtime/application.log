@@ -1690,3 +1690,91 @@ Stack trace:
 REQUEST_URI=/creditaxi/transaccion/create
 in C:\xampp\htdocs\creditaxi\protected\controllers\TransaccionController.php (70)
 in C:\xampp\htdocs\creditaxi\index.php (13)
+2013/12/08 02:35:01 [error] [exception.CHttpException.403] exception 'CHttpException' with message 'Usted no se encuentra autorizado a realizar esta acción.' in C:\xampp\htdocs\creditaxi\framework\web\auth\CAccessControlFilter.php:179
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\web\auth\CAccessControlFilter.php(142): CAccessControlFilter->accessDenied(Object(CWebUser), 'Usted no se enc...')
+#1 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilter.php(38): CAccessControlFilter->preFilter(Object(CFilterChain))
+#2 C:\xampp\htdocs\creditaxi\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#3 C:\xampp\htdocs\creditaxi\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#4 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#5 C:\xampp\htdocs\creditaxi\framework\web\CController.php(291): CFilterChain->run()
+#6 C:\xampp\htdocs\creditaxi\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#7 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(282): CController->run('Admin')
+#8 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('Credito/Admin')
+#9 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\creditaxi\index.php(13): CApplication->run()
+#11 {main}
+REQUEST_URI=/creditaxi/Credito/Admin
+HTTP_REFERER=http://localhost/creditaxi/Producto/Admin
+---
+2013/12/08 02:57:08 [error] [exception.CException] exception 'CException' with message 'Propiedad "Credito"."fecha" no se encuentra definida.' in C:\xampp\htdocs\creditaxi\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\db\ar\CActiveRecord.php(143): CComponent->__get('fecha')
+#1 C:\xampp\htdocs\creditaxi\framework\web\helpers\CHtml.php(2255): CActiveRecord->__get('fecha')
+#2 C:\xampp\htdocs\creditaxi\framework\web\helpers\CHtml.php(1980): CHtml::resolveValue(Object(Credito), 'fecha')
+#3 C:\xampp\htdocs\creditaxi\framework\web\helpers\CHtml.php(1257): CHtml::activeInputField('text', Object(Credito), 'fecha', Array)
+#4 C:\xampp\htdocs\creditaxi\framework\zii\widgets\jui\CJuiDatePicker.php(82): CHtml::activeTextField(Object(Credito), 'fecha', Array)
+#5 C:\xampp\htdocs\creditaxi\framework\web\CBaseController.php(173): CJuiDatePicker->run()
+#6 C:\xampp\htdocs\creditaxi\protected\views\credito\_form.php(61): CBaseController->widget('zii.widgets.jui...', Array)
+#7 C:\xampp\htdocs\creditaxi\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#8 C:\xampp\htdocs\creditaxi\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\creditaxi\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#10 C:\xampp\htdocs\creditaxi\protected\views\credito\create.php(18): CController->renderPartial('_form', Array)
+#11 C:\xampp\htdocs\creditaxi\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#12 C:\xampp\htdocs\creditaxi\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#13 C:\xampp\htdocs\creditaxi\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#14 C:\xampp\htdocs\creditaxi\framework\web\CController.php(782): CController->renderPartial('create', Array, true)
+#15 C:\xampp\htdocs\creditaxi\protected\controllers\CreditoController.php(79): CController->render('create', Array)
+#16 C:\xampp\htdocs\creditaxi\framework\web\actions\CInlineAction.php(49): CreditoController->actionCreate()
+#17 C:\xampp\htdocs\creditaxi\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#18 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#19 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#20 C:\xampp\htdocs\creditaxi\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#21 C:\xampp\htdocs\creditaxi\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#22 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#23 C:\xampp\htdocs\creditaxi\framework\web\CController.php(291): CFilterChain->run()
+#24 C:\xampp\htdocs\creditaxi\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#25 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(282): CController->run('create')
+#26 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('credito/create')
+#27 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#28 C:\xampp\htdocs\creditaxi\index.php(13): CApplication->run()
+#29 {main}
+REQUEST_URI=/creditaxi/credito/create
+HTTP_REFERER=http://localhost/creditaxi/credito/admin
+---
+2013/12/08 02:57:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/calendar.png"' in C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('images/calendar...')
+#1 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\creditaxi\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/creditaxi/images/calendar.png
+HTTP_REFERER=http://localhost/creditaxi/credito/create
+---
+2013/12/08 02:59:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/calendar.png"' in C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('images/calendar...')
+#1 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\creditaxi\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/creditaxi/images/calendar.png
+HTTP_REFERER=http://localhost/creditaxi/credito/create
+---
+2013/12/08 02:59:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/calendar.png"' in C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('images/calendar...')
+#1 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\creditaxi\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/creditaxi/images/calendar.png
+HTTP_REFERER=http://localhost/creditaxi/credito/update?id=2
+---
+2013/12/08 03:00:43 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/calendar.png"' in C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('images/calendar...')
+#1 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\creditaxi\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/creditaxi/images/calendar.png
+HTTP_REFERER=http://localhost/creditaxi/credito/update?id=2
+---

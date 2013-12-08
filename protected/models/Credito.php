@@ -66,10 +66,10 @@ class Credito extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id_credito' => 'Id Credito',
-			'id_cliente' => 'Id Cliente',
-			'cupoAprobado' => 'Cupo Aprobado',
-			'fechaAprobacion' => 'Fecha Aprobacion',
+			'id_credito' => 'Id credito',
+			'id_cliente' => 'Cedula cliente',
+			'cupoAprobado' => 'Cupo aprobado',
+			'fechaAprobacion' => 'Fecha aprobacion',
 		);
 	}
 

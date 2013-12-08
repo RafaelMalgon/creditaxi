@@ -8,6 +8,7 @@ class AccessControl {
         array_push($menu, array('label' => 'Administrar Gasolinera', 'items' => $this->getAdminGasolineraItems(), 'visible' => !Yii::app()->user->isGuest));
         array_push($menu, array('label' => 'Parametrizar Aplicacion', 'items' => $this->getAdminAplicacionItems(), 'visible' => !Yii::app()->user->isGuest));
         array_push($menu, array('label' => 'Realizar Venta', 'url' =>array('/Transaccion/Admin') , 'visible' => !Yii::app()->user->isGuest));
+        array_push($menu, array('label' => 'Credito', 'url' =>array('/Credito/Admin') , 'visible' => !Yii::app()->user->isGuest));
         foreach ($this->getBasicItems() as $item){
             array_push($menu, $item);
         }
