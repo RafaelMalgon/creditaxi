@@ -64,7 +64,6 @@ class FlotaController extends Controller
 	{
 		$model=new Flota;
                 
-                $this->asignarSobrecupo();
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
