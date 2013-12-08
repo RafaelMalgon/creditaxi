@@ -1,35 +1,8 @@
-<?php
-/* @var $this ProductoController */
-/* @var $model Producto */
-
-$this->breadcrumbs=array(
-	'Productos'=>array('index'),
-	'Manage',
-);
-
-$this->menu=array(
-	//array('label'=>'List Producto', 'url'=>array('index')),
-	array('label'=>'Crear Producto', 'url'=>array('create')),
-);
-
-Yii::app()->clientScript->registerScript('search', "
-$('.search-button').click(function(){
-	$('.search-form').toggle();
-	return false;
-});
-$('.search-form form').submit(function(){
-	$('#producto-grid').yiiGridView('update', {
-		data: $(this).serialize()
-	});
-	return false;
-});
-");
-?>
-
-<h1>Gestionar Productos</h1>
 
 
-<?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
+<h1>Ver <?php echo $producto; ?></h1>
+
+
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
 	'model'=>$model,
@@ -42,9 +15,8 @@ $('.search-form form').submit(function(){
 	'filter'=>$model,
 	'columns'=>array(
 		'id_producto',
-		'id_estacion_servicio',
+		'idEstacionServicio.nombre',
 		'nombre',
-		'tipo',
 		'valor',
 		array(
 			'class'=>'CButtonColumn',

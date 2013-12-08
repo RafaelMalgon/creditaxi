@@ -70,7 +70,7 @@ class Estacionservicio extends CActiveRecord
 	{
 		return array(
 			'id_estacion_servicio' => 'Id Estacion Servicio',
-			'nombre' => 'Nombre',
+			'nombre' => 'Nombre estacion',
 			'direccion' => 'Direccion',
 		);
 	}

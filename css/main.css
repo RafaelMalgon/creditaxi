@@ -227,3 +227,8 @@ div.search-form
 {
 	background: #80CFFF;
 }
+.grid-view .filters input, .grid-view .filters select {
+    border: 1px solid #CCCCCC;
+    display: none !important;
+    width: 100%;
+}

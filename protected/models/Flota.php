@@ -7,7 +7,7 @@
  * @property integer $id_flota
  * @property integer $id_cliente
  * @property integer $sobrecupoAgotado
- * @property integer $sobrecupoAsignado
+ * @property integer $sobrecupoApobado
  *
  * The followings are the available model relations:
  * @property Cliente $idCliente
@@ -42,10 +42,10 @@ class Flota extends CActiveRecord
 		// will receive user inputs.
 		return array(
 			array('id_cliente', 'required'),
-			array('id_cliente, sobrecupoAgotado, sobrecupoAsignado', 'numerical', 'integerOnly'=>true),
+			array('id_cliente, sobrecupoAgotado, sobrecupoApobado', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id_flota, id_cliente, sobrecupoAgotado, sobrecupoAsignado', 'safe', 'on'=>'search'),
+			array('id_flota, id_cliente, sobrecupoAgotado, sobrecupoApobado', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -71,7 +71,7 @@ class Flota extends CActiveRecord
 			'id_flota' => 'Id Flota',
 			'id_cliente' => 'Id Cliente',
 			'sobrecupoAgotado' => 'Sobrecupo Agotado',
-			'sobrecupoAsignado' => 'Sobrecupo Asignado',
+			'sobrecupoApobado' => 'Sobrecupo Apobado',
 		);
 	}
 
@@ -89,20 +89,10 @@ class Flota extends CActiveRecord
 		$criteria->compare('id_flota',$this->id_flota);
 		$criteria->compare('id_cliente',$this->id_cliente);
 		$criteria->compare('sobrecupoAgotado',$this->sobrecupoAgotado);
-		$criteria->compare('sobrecupoAsignado',$this->sobrecupoAsignado);
+		$criteria->compare('sobrecupoApobado',$this->sobrecupoApobado);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
 	}
-        public function obtenerValorSobrecupo($id){
-            $resultado = Yii::app()->db->createCommand(
-                    "SELECT cr.cupoAprobado * 0.01 , cupoAprobado FROM credito cr , cliente cl WHERE cr.id_cliente="
-                    . (int)$id)->queryColumn();
-            
-            if($resultado != NULL){
-                return Conversion::conversionDouble(current($resultado));
-            }else
-                return 0;
-        }
 }

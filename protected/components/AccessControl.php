@@ -29,7 +29,7 @@ class AccessControl {
     }
     private function getAdminAplicacionItems(){
         $item = array();
-        array_push($item,array('label' => 'Combustible', 'url' => array('/Producto/Admin')));
+        array_push($item,array('label' => 'Combustible', 'url' => array('/Producto/Combustible')));
         array_push($item,array('label' => 'Lavada', 'url' => array('/Producto/Lavada')));
         return $item;
     }
