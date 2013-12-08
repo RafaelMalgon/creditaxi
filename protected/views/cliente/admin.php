@@ -46,6 +46,13 @@ $('.search-form form').submit(function(){
 		'nombre',
 		'telefono',
 		'correo',
+                array(            
+                    'name'=>'correo',
+                    //call the method 'gridDataColumn' from the controller
+                    'type'=>'raw',
+                    'filter' => false,
+                    'value'=>array($this,'gridDataColumn'), 
+                 ),                
 		array(
 			'class'=>'CButtonColumn',
 		),

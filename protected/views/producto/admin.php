@@ -17,7 +17,6 @@
 		'id_producto',
 		'idEstacionServicio.nombre',
 		'nombre',
-		'tipo',
 		'valor',
 		array(
 			'class'=>'CButtonColumn',

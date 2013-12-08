@@ -9,6 +9,7 @@
  * @property string $nombre
  * @property string $telefono
  * @property string $correo
+ * @property integer $Activo
  *
  * The followings are the available model relations:
  * @property Usuario $idCliente
@@ -43,13 +44,13 @@ class Cliente extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_cliente, id_rol, nombre, telefono, correo', 'required'),
-			array('id_cliente, id_rol', 'numerical', 'integerOnly'=>true),
+			array('id_cliente, id_rol, nombre, telefono, correo, Activo', 'required'),
+			array('id_cliente, id_rol, Activo', 'numerical', 'integerOnly'=>true),
 			array('nombre, correo', 'length', 'max'=>50),
 			array('telefono', 'length', 'max'=>15),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id_cliente, id_rol, nombre, telefono, correo', 'safe', 'on'=>'search'),
+			array('id_cliente, id_rol, nombre, telefono, correo, Activo', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -73,11 +74,12 @@ class Cliente extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'id_cliente' => 'Cedula',
-			'id_rol' => 'Rol',
+			'id_cliente' => 'Id Cliente',
+			'id_rol' => 'Id Rol',
 			'nombre' => 'Nombre',
 			'telefono' => 'Telefono',
 			'correo' => 'Correo',
+			'Activo' => 'Activo',
 		);
 	}
 
@@ -97,6 +99,7 @@ class Cliente extends CActiveRecord
 		$criteria->compare('nombre',$this->nombre,true);
 		$criteria->compare('telefono',$this->telefono,true);
 		$criteria->compare('correo',$this->correo,true);
+		$criteria->compare('Activo',$this->Activo);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

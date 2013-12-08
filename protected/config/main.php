@@ -38,7 +38,7 @@ return array(
             'rules' => array(
                 '<controller:\w+>/<id:[a-f0-9]{8}(-[a-f0-9]{4}){3}-[a-f0-9]{12}+>'=>'<controller>/view,delete,update',
                 //'<controller:\w+>/<id:\d+>' => '<controller>/view',
-               // '<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
+                //'<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
                 '<controller:\w+>/<action:\w+>' => '<controller>/<action>',
             ),
             'showScriptName' => false

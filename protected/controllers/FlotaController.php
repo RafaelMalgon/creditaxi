@@ -63,6 +63,8 @@ class FlotaController extends Controller
 	public function actionCreate()
 	{
 		$model=new Flota;
+                
+                $this->asignarSobrecupo();
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -134,6 +136,9 @@ class FlotaController extends Controller
 	{
 		$model=new Flota('search');
 		$model->unsetAttributes();  // clear any default values
+                $this->asignarSobrecupo();
+                $model->obtenerValorSobrecupo(12345);
+                var_dump($model->obtenerValorSobrecupo(55));
 		if(isset($_GET['Flota']))
 			$model->attributes=$_GET['Flota'];
 
@@ -169,4 +174,24 @@ class FlotaController extends Controller
 			Yii::app()->end();
 		}
 	}
+         protected function asignarSobrecupo()
+        {
+             $sql = 'SELECT cl.id_cliente , cupoAprobado FROM credito cr , cliente cl WHERE cr.id_cliente=cl.id_cliente;';
+             $rows = Yii::app()->db->createCommand($sql)->queryAll();
+             
+             //var_dump($rows);
+             
+             $result = '';
+             if(!empty($rows))
+                foreach ($rows as $row){
+                 $result = $row['id_cliente'];
+                 //$sql2 ='UPDATE Flota SET sobrecupoAsignado=89 WHERE id_cliente ='.$result.';';  
+                 //$rows = Yii::app()->db->createCommand($sql2)->queryAll(); 
+                 //var_dump($row['id_cliente']);                 
+                 //var_dump($result);
+                 //echo "$result";
+            }      
+            
+            return $result;  
+        }
 }

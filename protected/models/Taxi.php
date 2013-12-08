@@ -98,4 +98,23 @@ class Taxi extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+        public function distribuirCupo(){
+            $resultado = Yii::app()->db->createCommand(
+                    "SELECT count(*)
+                    FROM taxi t , flota f , cliente c
+                    WHERE t.id_flota = f.id_flota
+                    AND f.id_cliente = c.id_cliente;"
+                    )->queryColumn();
+            $cupo = Yii::app()->db->createCommand(
+                    "
+                        UPDATE taxi 
+                        SET cupo= 10 
+                        WHERE placa = 'AAA111';
+                    "
+                    );
+            if($resultado != NULL){
+                return Conversion::conversionDouble(current($resultado));
+            }else
+                return 0;
+        }
 }
