@@ -11,8 +11,6 @@ $this->menu=array(
 	//array('label'=>'List Transaccion', 'url'=>array('index')),
 	array('label'=>'Gestionar Transacciones', 'url'=>array('admin')),
 	array('label'=>'Crear Transaccion', 'url'=>array('create')),
-	array('label'=>'Actualizar Transaccion', 'url'=>array('update', 'id'=>$model->id_Transaccion)),
-	array('label'=>'Eliminar Transaccion', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->id_Transaccion),'confirm'=>'Are you sure you want to delete this item?')),
 );
 ?>
 

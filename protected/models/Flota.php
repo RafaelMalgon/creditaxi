@@ -94,10 +94,10 @@ class Flota extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
-            }  public function obtenerValorSobrecupo($id){
+            }  public function obtenerValorSobrecupo(){
                         $resultado = Yii::app()->db->createCommand(
                                 "SELECT cr.cupoAprobado * 0.01 , cupoAprobado FROM credito cr , cliente cl WHERE cr.id_cliente="
-                                . (int)$id)->queryColumn();
+                                . (int)  $this->idCliente)->queryColumn();
 
                         if($resultado != NULL){
                             return Conversion::conversionDouble(current($resultado));

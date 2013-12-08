@@ -74,7 +74,7 @@ class Vendedor extends CActiveRecord
 			'id_vendedor' => 'Id Vendedor',
 			'id_estacion_servicio' => 'Id Estacion Servicio',
 			'id_rol' => 'Id Rol',
-			'nombre' => 'Nombre',
+			'nombre' => 'Nombre vendedor',
 		);
 	}
 

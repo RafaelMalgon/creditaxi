@@ -42,13 +42,14 @@ $('.search-form form').submit(function(){
 	'filter'=>$model,
 	'columns'=>array(
 		'id_Transaccion',
-		'id_vendedor',
-		'id_producto',
+		'idVendedor.nombre',
+		'idProducto.nombre',
 		'placa',
 		'valorTotal',
 		'fecha',
 		array(
 			'class'=>'CButtonColumn',
+                        'template'=>"{view}"
 		),
 	),
 )); ?>

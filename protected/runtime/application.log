@@ -1,0 +1,30 @@
+2013/12/08 19:54:16 [error] [exception.CException] exception 'CException' with message 'Propiedad "CButtonColumn"."action" no se encuentra definida.' in C:\xampp\htdocs\crediTaxi\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\crediTaxi\framework\YiiBase.php(220): CComponent->__set('action', '{view}')
+#1 C:\xampp\htdocs\crediTaxi\framework\zii\widgets\grid\CGridView.php(363): YiiBase::createComponent(Array, Object(CGridView))
+#2 C:\xampp\htdocs\crediTaxi\framework\zii\widgets\grid\CGridView.php(334): CGridView->initColumns()
+#3 C:\xampp\htdocs\crediTaxi\framework\web\CBaseController.php(147): CGridView->init()
+#4 C:\xampp\htdocs\crediTaxi\framework\web\CBaseController.php(172): CBaseController->createWidget('zii.widgets.gri...', Array)
+#5 C:\xampp\htdocs\crediTaxi\protected\views\transaccion\admin.php(55): CBaseController->widget('zii.widgets.gri...', Array)
+#6 C:\xampp\htdocs\crediTaxi\framework\web\CBaseController.php(126): require('C:\xampp\htdocs...')
+#7 C:\xampp\htdocs\crediTaxi\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\xampp\htdocs...', Array, true)
+#8 C:\xampp\htdocs\crediTaxi\framework\web\CController.php(869): CBaseController->renderFile('C:\xampp\htdocs...', Array, true)
+#9 C:\xampp\htdocs\crediTaxi\framework\web\CController.php(782): CController->renderPartial('admin', Array, true)
+#10 C:\xampp\htdocs\crediTaxi\protected\controllers\TransaccionController.php(143): CController->render('admin', Array)
+#11 C:\xampp\htdocs\crediTaxi\framework\web\actions\CInlineAction.php(49): TransaccionController->actionAdmin()
+#12 C:\xampp\htdocs\crediTaxi\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\crediTaxi\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#14 C:\xampp\htdocs\crediTaxi\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#15 C:\xampp\htdocs\crediTaxi\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#16 C:\xampp\htdocs\crediTaxi\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#17 C:\xampp\htdocs\crediTaxi\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#18 C:\xampp\htdocs\crediTaxi\framework\web\CController.php(291): CFilterChain->run()
+#19 C:\xampp\htdocs\crediTaxi\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#20 C:\xampp\htdocs\crediTaxi\framework\web\CWebApplication.php(282): CController->run('Admin')
+#21 C:\xampp\htdocs\crediTaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('Transaccion/Adm...')
+#22 C:\xampp\htdocs\crediTaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#23 C:\xampp\htdocs\crediTaxi\index.php(13): CApplication->run()
+#24 {main}
+REQUEST_URI=/crediTaxi/Transaccion/Admin
+HTTP_REFERER=http://localhost/crediTaxi/transaccion/create
+---
