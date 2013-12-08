@@ -45,7 +45,7 @@ return array(
         ),
         // uncomment the following to use a MySQL database
         'db' => array(
-            'connectionString' => 'mysql:host=192.168.1.4;dbname=creditaxi',
+            'connectionString' => 'mysql:host=localhost;dbname=creditaxi',
             'emulatePrepare' => true,
             'username' => 'usrCrediTaxi',
             'password' => 'HRt7hYQJn3LPHZdB',
