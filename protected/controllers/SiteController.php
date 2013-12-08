@@ -27,7 +27,33 @@ class SiteController extends Controller {
     public function actionIndex() {
         // renders the view file 'protected/views/site/index.php'
         // using the default layout 'protected/views/layouts/main.php'
-        $this->redirect("site/login");
+        if (!Yii::app()->user->isGuest) {
+            if (Yii::app()->session['Rol'] == "Cliente") {
+                $usuario = Yii::app()->session['Usuario'];
+                $credito = $usuario->getRelated('creditos');
+                $credito = $credito[0];
+                $flotas = $usuario->getRelated('flotas');
+                $flota = $flotas[0];
+                $taxis = $flota->getRelated('taxis');
+                $restante = 0;
+                foreach ($taxis as $taxi) {
+                    $restante+=$taxi->saldoCupo;
+                }
+                if ($credito->cupoAprobado * (0.1) < $restante) {
+                    $mensaje = "Le queda menos del 10% del cupo aprobado.";
+                    $alarma = 1;
+                } else {
+                    $mensaje = "Bienvenido a CrediTaxi";
+                    $alarma = 0;
+                }
+            } else {
+                $mensaje = "Bienvenido a CrediTaxi";
+                $alarma = 0;
+            }
+            $this->render('home', array('mensaje' => $mensaje, 'alarma' => $alarma));
+        }else{
+            $this->redirect('site/Login');
+        }
     }
 
     /**

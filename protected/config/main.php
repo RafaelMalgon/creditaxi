@@ -7,7 +7,7 @@
 return array(
     'basePath' => dirname(__FILE__) . DIRECTORY_SEPARATOR . '..',
     'name' => 'CrediTaxi',
-    'homeUrl'=>array('Transaccion/index'),
+    'homeUrl'=>array('Site/index'),
     'sourceLanguage'=>'es',
     // preloading 'log' component
     'preload' => array('log'),

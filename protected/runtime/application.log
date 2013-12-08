@@ -28,3 +28,71 @@ Stack trace:
 REQUEST_URI=/crediTaxi/Transaccion/Admin
 HTTP_REFERER=http://localhost/crediTaxi/transaccion/create
 ---
+2013/12/08 22:50:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "alarma"' in C:\xampp\htdocs\crediTaxi\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\crediTaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('alarma')
+#1 C:\xampp\htdocs\crediTaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\crediTaxi\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/crediTaxi/alarma
+---
+2013/12/08 22:50:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "alarma" solicitada.' in C:\xampp\htdocs\crediTaxi\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\crediTaxi\framework\web\CController.php(270): CController->missingAction('alarma')
+#1 C:\xampp\htdocs\crediTaxi\framework\web\CWebApplication.php(282): CController->run('alarma')
+#2 C:\xampp\htdocs\crediTaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('site/alarma')
+#3 C:\xampp\htdocs\crediTaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\crediTaxi\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/crediTaxi/site/alarma
+---
+2013/12/08 22:50:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Alarma" solicitada.' in C:\xampp\htdocs\crediTaxi\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\crediTaxi\framework\web\CController.php(270): CController->missingAction('Alarma')
+#1 C:\xampp\htdocs\crediTaxi\framework\web\CWebApplication.php(282): CController->run('Alarma')
+#2 C:\xampp\htdocs\crediTaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('site/Alarma')
+#3 C:\xampp\htdocs\crediTaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\crediTaxi\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/crediTaxi/site/Alarma
+---
+2013/12/08 22:50:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Alarma" solicitada.' in C:\xampp\htdocs\crediTaxi\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\crediTaxi\framework\web\CController.php(270): CController->missingAction('Alarma')
+#1 C:\xampp\htdocs\crediTaxi\framework\web\CWebApplication.php(282): CController->run('Alarma')
+#2 C:\xampp\htdocs\crediTaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('site/Alarma')
+#3 C:\xampp\htdocs\crediTaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\crediTaxi\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/crediTaxi/site/Alarma
+---
+2013/12/08 22:51:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Alarma" solicitada.' in C:\xampp\htdocs\crediTaxi\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\crediTaxi\framework\web\CController.php(270): CController->missingAction('Alarma')
+#1 C:\xampp\htdocs\crediTaxi\framework\web\CWebApplication.php(282): CController->run('Alarma')
+#2 C:\xampp\htdocs\crediTaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('site/Alarma')
+#3 C:\xampp\htdocs\crediTaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\crediTaxi\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/crediTaxi/site/Alarma
+---
+2013/12/08 22:52:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Alarma" solicitada.' in C:\xampp\htdocs\crediTaxi\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\crediTaxi\framework\web\CController.php(270): CController->missingAction('Alarma')
+#1 C:\xampp\htdocs\crediTaxi\framework\web\CWebApplication.php(282): CController->run('Alarma')
+#2 C:\xampp\htdocs\crediTaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('site/Alarma')
+#3 C:\xampp\htdocs\crediTaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\crediTaxi\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/crediTaxi/site/Alarma
+---
+2013/12/08 22:56:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'El sistema no ha podido encontrar la acción "Alarma" solicitada.' in C:\xampp\htdocs\crediTaxi\framework\web\CController.php:483
+Stack trace:
+#0 C:\xampp\htdocs\crediTaxi\framework\web\CController.php(270): CController->missingAction('Alarma')
+#1 C:\xampp\htdocs\crediTaxi\framework\web\CWebApplication.php(282): CController->run('Alarma')
+#2 C:\xampp\htdocs\crediTaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('site/Alarma')
+#3 C:\xampp\htdocs\crediTaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\crediTaxi\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/crediTaxi/site/Alarma
+---
