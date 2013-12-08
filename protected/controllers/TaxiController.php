@@ -63,6 +63,11 @@ class TaxiController extends Controller
 	public function actionCreate()
 	{
 		$model=new Taxi;
+                $cliente=Yii::app()->session['Usuario'];
+                $flota = $cliente->getRelated("flotas");            
+                $flota=$flota[0];                        
+                $model = new Taxi('serch');
+                $model->id_flota=$flota->id_flota;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
