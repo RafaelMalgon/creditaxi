@@ -5,8 +5,9 @@ class AccessControl {
     public function getMenuItems($idUsuario) {
         $menu = array();
         if (Yii::app()->session['Rol'] == "Cliente") {
-            array_push($menu, array('label' => 'Administrar Flota', 'items' => $this->getAdminFlotaItems(), 'visible' => !Yii::app()->user->isGuest));
+            array_push($menu, array('label' => 'Administrar Flota', 'items' => $this->getAdminFlotaItemsCliente(), 'visible' => !Yii::app()->user->isGuest));
         } else if (Yii::app()->session['Rol'] == "Administrador") {
+            array_push($menu, array('label' => 'Administrar Flota', 'items' => $this->getAdminFlotaItemsAdministrador(), 'visible' => !Yii::app()->user->isGuest));
             array_push($menu, array('label' => 'Administrar Gasolinera', 'items' => $this->getAdminGasolineraItems(), 'visible' => !Yii::app()->user->isGuest));
             array_push($menu, array('label' => 'Parametrizar Aplicacion', 'items' => $this->getAdminAplicacionItems(), 'visible' => !Yii::app()->user->isGuest));
             array_push($menu, array('label' => 'Credito', 'url' => array('/Credito/Admin'), 'visible' => !Yii::app()->user->isGuest));
@@ -19,11 +20,14 @@ class AccessControl {
         return $menu;
     }
 
-    private function getAdminFlotaItems() {
+    private function getAdminFlotaItemsCliente() {
+        $item = array();
+        array_push($item, array('label' => 'Taxi', 'url' => array('/Taxi/admin')));
+        return $item;
+    }
+    private function getAdminFlotaItemsAdministrador() {
         $item = array();
         array_push($item, array('label' => 'Conductor', 'url' => array('/Conductor/admin')));
-        array_push($item, array('label' => 'Taxi', 'url' => array('/Taxi/admin')));
-        array_push($item, array('label' => 'Flota', 'url' => array('/flota/admin')));
         return $item;
     }
 

@@ -17,3 +17,71 @@ Stack trace:
 REQUEST_URI=/crediTaxi/transaccion/create
 in C:\xampp\htdocs\crediTaxi\protected\controllers\TransaccionController.php (73)
 in C:\xampp\htdocs\crediTaxi\index.php (13)
+2013/12/09 10:21:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/calendar.png"' in C:\xampp\htdocs\crediTaxi\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\crediTaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('images/calendar...')
+#1 C:\xampp\htdocs\crediTaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\crediTaxi\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/crediTaxi/images/calendar.png
+HTTP_REFERER=http://localhost/crediTaxi/credito/create
+---
+2013/12/09 10:30:28 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'correo@correo.com' for key 'UQ_Cliente_correo'. La sentencia SQL ejecutada fue: INSERT INTO `cliente` (`id_rol`, `id_cliente`, `nombre`, `telefono`, `correo`, `Activo`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5).
+in C:\xampp\htdocs\crediTaxi\protected\controllers\ClienteController.php (78)
+in C:\xampp\htdocs\crediTaxi\index.php (13)
+2013/12/09 10:30:28 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry 'correo@correo.com' for key 'UQ_Cliente_correo'. The SQL statement executed was: INSERT INTO `cliente` (`id_rol`, `id_cliente`, `nombre`, `telefono`, `correo`, `Activo`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5)' in C:\xampp\htdocs\crediTaxi\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\crediTaxi\framework\db\ar\CActiveRecord.php(959): CDbCommand->execute()
+#1 C:\xampp\htdocs\crediTaxi\framework\db\ar\CActiveRecord.php(754): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\crediTaxi\protected\controllers\ClienteController.php(78): CActiveRecord->save()
+#3 C:\xampp\htdocs\crediTaxi\framework\web\actions\CInlineAction.php(49): ClienteController->actionCreate()
+#4 C:\xampp\htdocs\crediTaxi\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\crediTaxi\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\crediTaxi\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\crediTaxi\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\crediTaxi\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\crediTaxi\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\crediTaxi\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\crediTaxi\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\crediTaxi\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\crediTaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('cliente/create')
+#14 C:\xampp\htdocs\crediTaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\crediTaxi\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/crediTaxi/cliente/create
+HTTP_REFERER=http://localhost/crediTaxi/cliente/create
+---
+2013/12/09 10:30:52 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1033736820' for key 'PRIMARY'. La sentencia SQL ejecutada fue: INSERT INTO `usuario` (`idRol`, `clave`, `idUsuario`) VALUES (:yp0, :yp1, :yp2).
+in C:\xampp\htdocs\crediTaxi\protected\controllers\ClienteController.php (77)
+in C:\xampp\htdocs\crediTaxi\index.php (13)
+2013/12/09 10:30:52 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand falló al ejecutar la sentencia SQL: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '1033736820' for key 'PRIMARY'. The SQL statement executed was: INSERT INTO `usuario` (`idRol`, `clave`, `idUsuario`) VALUES (:yp0, :yp1, :yp2)' in C:\xampp\htdocs\crediTaxi\framework\db\CDbCommand.php:357
+Stack trace:
+#0 C:\xampp\htdocs\crediTaxi\framework\db\ar\CActiveRecord.php(959): CDbCommand->execute()
+#1 C:\xampp\htdocs\crediTaxi\framework\db\ar\CActiveRecord.php(754): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\crediTaxi\protected\controllers\ClienteController.php(77): CActiveRecord->save()
+#3 C:\xampp\htdocs\crediTaxi\framework\web\actions\CInlineAction.php(49): ClienteController->actionCreate()
+#4 C:\xampp\htdocs\crediTaxi\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#5 C:\xampp\htdocs\crediTaxi\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#6 C:\xampp\htdocs\crediTaxi\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#7 C:\xampp\htdocs\crediTaxi\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\crediTaxi\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\crediTaxi\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\crediTaxi\framework\web\CController.php(291): CFilterChain->run()
+#11 C:\xampp\htdocs\crediTaxi\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\crediTaxi\framework\web\CWebApplication.php(282): CController->run('create')
+#13 C:\xampp\htdocs\crediTaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('cliente/create')
+#14 C:\xampp\htdocs\crediTaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\crediTaxi\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/crediTaxi/cliente/create
+HTTP_REFERER=http://localhost/crediTaxi/cliente/create
+---
+2013/12/09 10:31:44 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'No es posible resolver la solicitud "images/calendar.png"' in C:\xampp\htdocs\crediTaxi\framework\web\CWebApplication.php:286
+Stack trace:
+#0 C:\xampp\htdocs\crediTaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('images/calendar...')
+#1 C:\xampp\htdocs\crediTaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\crediTaxi\index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/crediTaxi/images/calendar.png
+HTTP_REFERER=http://localhost/crediTaxi/credito/create
+---

@@ -110,9 +110,11 @@ class Taxi extends CActiveRecord
             $resultado = Yii::app()->db->createCommand(
                                 " SELECT SUM(cupo)  FROM taxi WHERE id_flota="
                                 . (int)  $flotas->id_flota)->queryColumn();
-            $valor2 = $valor - $resultado[0];
-            var_dump($valor2);
-            //var_dump($valor2);                       
+            if(!Yii::app()->session['isSelling'])
+                $valor2 = $valor - $resultado[0]-$this->cupo;
+            else
+                $valor2 = $valor - $resultado[0];
+                
             //die();
             //var_dump($credito[0]->cupoAprobado);               
             

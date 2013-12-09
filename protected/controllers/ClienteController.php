@@ -63,37 +63,41 @@ class ClienteController extends Controller {
         $b = new Usuario;
         $b->idRol = 2;
         $a->id_rol = 2;
-
         $this->performAjaxValidation(array($a, $b));
 
         if ($this->getPost('Cliente') != null && $this->getPost('Usuario')) {
 
             $a->setAttributes($this->getPost('Cliente'));
             $b->setAttributes($this->getPost('Usuario'));
+            $flota = new Flota();
+            $flota->id_cliente = $a->id_cliente;
+            $flota->sobrecupoAgotado = 0;
+            $flota->sobrecupoApobado = 0;
             $b->idUsuario = $a->id_cliente;
             if ($b->save()) {
-                if ($a->save()){
-                    $this->redirect(array('view', 'id' => $a->id_cliente));                    
-        }
+                if ($a->save()) {
+                    if ($flota->save()) {
+                        $this->redirect(array('view', 'id' => $a->id_cliente));
+                    }
+                }
             }
         }
         $this->render('create', array('a' => $a, 'b' => $b));
     }
 
-    
     /**
      * Updates a particular model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id the ID of the model to be updated
      */
     public function actionUpdate($id) {
-       
+
         $b = new Usuario;
-        
+
         $a = $this->loadModel($id);
 
-        if ($this->getPost('Cliente') != null && $this->getPost('Usuario')){
-            
+        if ($this->getPost('Cliente') != null && $this->getPost('Usuario')) {
+
             $a->setAttributes($this->getPost('Cliente'));
             $b->setAttributes($this->getPost('Usuario'));
 
@@ -142,18 +146,19 @@ class ClienteController extends Controller {
             'model' => $model,
         ));
     }
+
     public function actionEnable($id) {
         $cliente = Cliente::model()->findByPk($id);
-        $cliente->Activo=true;
-        if($cliente->save()){
+        $cliente->Activo = true;
+        if ($cliente->save()) {
             $this->redirect('admin');
         }
     }
 
     public function actionDisable($id) {
         $cliente = Cliente::model()->findByPk($id);
-        $cliente->Activo=false;
-        if($cliente->save()){
+        $cliente->Activo = false;
+        if ($cliente->save()) {
             $this->redirect('admin');
         }
     }

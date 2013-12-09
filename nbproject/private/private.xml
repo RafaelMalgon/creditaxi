@@ -1,15 +1,16 @@
-<?xml version="1.0" encoding="UTF-8"?><project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/crediTaxi/protected/models/Usuario.php</file>
-            <file>file:/C:/xampp/htdocs/crediTaxi/protected/components/UserIdentity.php</file>
             <file>file:/C:/xampp/htdocs/crediTaxi/protected/models/Cliente.php</file>
-            <file>file:/C:/xampp/htdocs/crediTaxi/protected/models/LoginForm.php</file>
-            <file>file:/C:/xampp/htdocs/crediTaxi/protected/controllers/SiteController.php</file>
-            <file>file:/C:/xampp/htdocs/crediTaxi/protected/views/layouts/main.php</file>
+            <file>file:/C:/xampp/htdocs/crediTaxi/protected/models/Credito.php</file>
+            <file>file:/C:/xampp/htdocs/crediTaxi/protected/models/Transaccion.php</file>
+            <file>file:/C:/xampp/htdocs/crediTaxi/protected/models/Taxi.php</file>
+            <file>file:/C:/xampp/htdocs/crediTaxi/protected/controllers/ConductorController.php</file>
             <file>file:/C:/xampp/htdocs/crediTaxi/protected/components/AccessControl.php</file>
+            <file>file:/C:/xampp/htdocs/crediTaxi/protected/models/Flota.php</file>
         </group>
     </open-files>
 </project-private>
