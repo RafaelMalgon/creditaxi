@@ -28,7 +28,13 @@ class SiteController extends Controller {
         // renders the view file 'protected/views/site/index.php'
         // using the default layout 'protected/views/layouts/main.php'
         if (!Yii::app()->user->isGuest) {
-            if (Yii::app()->session['Rol'] == "Cliente") {
+            $this->validarAlarma();
+        }else{
+            $this->redirect('site/Login');
+        }
+    }
+    private function validarAlarma(){
+        if (Yii::app()->session['Rol'] == "Cliente") {
                 $usuario = Yii::app()->session['Usuario'];
                 $credito = $usuario->getRelated('creditos');
                 $credito = $credito[0];
@@ -51,11 +57,7 @@ class SiteController extends Controller {
                 $alarma = 0;
             }
             $this->render('home', array('mensaje' => $mensaje, 'alarma' => $alarma));
-        }else{
-            $this->redirect('site/Login');
-        }
     }
-
     /**
      * This is the action to handle external exceptions.
      */

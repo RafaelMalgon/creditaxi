@@ -31,6 +31,7 @@ class AccessControl {
         $item = array();
         array_push($item, array('label' => 'Taxi', 'url' => array('/Taxi/admin')));
         array_push($item, array('label' => 'Cliente', 'url' => array('/Cliente/admin')));
+        array_push($item, array('label' => 'Aprobar Sobrecupo', 'url' => array('/flota/admin')));
         return $item;
     }
 
