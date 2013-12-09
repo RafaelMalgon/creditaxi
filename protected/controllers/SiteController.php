@@ -29,35 +29,37 @@ class SiteController extends Controller {
         // using the default layout 'protected/views/layouts/main.php'
         if (!Yii::app()->user->isGuest) {
             $this->validarAlarma();
-        }else{
+        } else {
             $this->redirect('site/Login');
         }
     }
-    private function validarAlarma(){
+
+    private function validarAlarma() {
         if (Yii::app()->session['Rol'] == "Cliente") {
-                $usuario = Yii::app()->session['Usuario'];
-                $credito = $usuario->getRelated('creditos');
-                $credito = $credito[0];
-                $flotas = $usuario->getRelated('flotas');
-                $flota = $flotas[0];
-                $taxis = $flota->getRelated('taxis');
-                $restante = 0;
-                foreach ($taxis as $taxi) {
-                    $restante+=$taxi->saldoCupo;
-                }
-                if ($credito->cupoAprobado * (0.1) < $restante) {
-                    $mensaje = "Le queda menos del 10% del cupo aprobado.";
-                    $alarma = 1;
-                } else {
-                    $mensaje = "Bienvenido a CrediTaxi";
-                    $alarma = 0;
-                }
+            $usuario = Yii::app()->session['Usuario'];
+            $credito = $usuario->getRelated('creditos');
+            $credito = $credito[0];
+            $flotas = $usuario->getRelated('flotas');
+            $flota = $flotas[0];
+            $taxis = $flota->getRelated('taxis');
+            $restante = 0;
+            foreach ($taxis as $taxi) {
+                $restante+=$taxi->saldoCupo;
+            }
+            if ($credito->cupoAprobado * (0.1) < $restante) {
+                $mensaje = "Le queda menos del 10% del cupo aprobado.";
+                $alarma = 1;
             } else {
                 $mensaje = "Bienvenido a CrediTaxi";
                 $alarma = 0;
             }
-            $this->render('home', array('mensaje' => $mensaje, 'alarma' => $alarma));
+        } else {
+            $mensaje = "Bienvenido a CrediTaxi";
+            $alarma = 0;
+        }
+        $this->render('home', array('mensaje' => $mensaje, 'alarma' => $alarma));
     }
+
     /**
      * This is the action to handle external exceptions.
      */
@@ -82,8 +84,12 @@ class SiteController extends Controller {
                 // validate user input and redirect to the previous page if valid
                 $validate = $model->validate();
                 $login = $model->login();
-                if ($validate && $login)
-                    $this->redirect(Yii::app()->user->returnUrl);
+                if ($validate && $login) {
+                    if (Yii::app()->session['Usuario']->Activo)
+                        $this->redirect(Yii::app()->user->returnUrl);
+                    else
+                        $this->redirect('Login');
+                }
             }
             // display the login form
             $this->render('login', array('model' => $model));
