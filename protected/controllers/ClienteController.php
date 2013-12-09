@@ -141,6 +141,7 @@ class ClienteController extends Controller {
         $this->render('admin', array(
             'model' => $model,
         ));
+    }
     public function actionEnable($id) {
         $cliente = Cliente::model()->findByPk($id);
         $cliente->Activo=true;
