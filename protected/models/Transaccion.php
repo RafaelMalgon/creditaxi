@@ -55,16 +55,16 @@ class Transaccion extends CActiveRecord {
     public function validateValor($attribute) {
         $taxi = Taxi::model()->findByPk($this->placa);
         $saldoCupo = $taxi->saldoCupo === null ? 0 : $taxi->saldoCupo;
-        $saldoCupo = $saldoCupo + $this->valorTotal;
+        $saldoCupo = $saldoCupo - $this->valorTotal;
         $error = false;
+        $flota = $taxi->getRelated('idFlota');
         if ($taxi->cupo === null) {
             $this->addError($attribute, 'No se ha asignado cupo al taxi seleccionado');
             $error = true;
-        } else if ($saldoCupo > $taxi->cupo && !$taxi->getRelated('idFlota')->sobrecupoApobado) {
+        } else if ($saldoCupo < 0 && !$taxi->getRelated('idFlota')->sobrecupoApobado) {
             $this->addError($attribute, 'El valor de la venta supera el cupo aprobado, porfavor solicite un sobrecupo');
             $error = true;
         } else if ($taxi->getRelated('idFlota')->sobrecupoApobado) {
-            $flota = $taxi->getRelated('idFlota');
             if ($flota->sobrecupoAgotado + $this->valorTotal > $flota->obtenerValorSobrecupo()) {
                 $this->addError($attribute, 'El valor de la venta supera el valor del sobrecupo');
                 $error = true;
@@ -76,6 +76,7 @@ class Transaccion extends CActiveRecord {
                     if ($taxi->saldoCupo >= $this->valorTotal) {
                         $taxi->saldoCupo = $taxi->saldoCupo - $this->valorTotal;
                         if (!$taxi->save()) {
+                            var_dump($taxi->getErrors());die();
                             $this->addError($attribute, 'Ha ocurrido un error al actualizar el sado, intente más tarde');
                         }
                     } else {
@@ -86,6 +87,7 @@ class Transaccion extends CActiveRecord {
                     }
                 } else {
                     $flota->sobrecupoAgotado = $flota->sobrecupoAgotado + $this->valorTotal;
+                    var_dump($taxi->saldoCupo);die();
                     $flota->save();
                 }
             }

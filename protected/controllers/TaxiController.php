@@ -75,6 +75,7 @@ class TaxiController extends Controller
 		if($this->getPost('Taxi') != null)
 		{
 			$model->setAttributes($this->getPost('Taxi'));
+                        $model->saldoCupo=$model->cupo;
                         
 			if($model->save()){
 				$this->redirect(array('view','id'=>$model->placa));
