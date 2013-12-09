@@ -907,3 +907,37 @@ Stack trace:
 REQUEST_URI=/creditaxi/Taxi/admin
 HTTP_REFERER=http://localhost/creditaxi/cliente/create
 ---
+2013/12/09 07:42:12 [error] [php] Missing argument 2 for CActiveRecord::setAttribute(), called in C:\xampp\htdocs\creditaxi\protected\controllers\ClienteController.php on line 76 and defined (C:\xampp\htdocs\creditaxi\framework\db\ar\CActiveRecord.php:696)
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(133): ClienteController->runAction()
+#2 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\creditaxi\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\creditaxi\framework\web\filters\CInlineFilter.php(58): ClienteController->filterAccessControl()
+#5 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\creditaxi\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\creditaxi\framework\web\CController.php(265): ClienteController->runActionWithFilters()
+#8 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(282): ClienteController->run()
+#9 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\creditaxi\index.php(13): CWebApplication->run()
+REQUEST_URI=/creditaxi/cliente/create
+in C:\xampp\htdocs\creditaxi\protected\controllers\ClienteController.php (76)
+in C:\xampp\htdocs\creditaxi\index.php (13)
+2013/12/09 07:58:54 [error] [php] Missing argument 2 for CActiveRecord::setAttribute(), called in C:\xampp\htdocs\creditaxi\protected\controllers\ClienteController.php on line 71 and defined (C:\xampp\htdocs\creditaxi\framework\db\ar\CActiveRecord.php:696)
+Stack trace:
+#0 C:\xampp\htdocs\creditaxi\framework\web\CController.php(308): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(133): ClienteController->runAction()
+#2 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#3 C:\xampp\htdocs\creditaxi\framework\web\CController.php(1145): CAccessControlFilter->filter()
+#4 C:\xampp\htdocs\creditaxi\framework\web\filters\CInlineFilter.php(58): ClienteController->filterAccessControl()
+#5 C:\xampp\htdocs\creditaxi\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter()
+#6 C:\xampp\htdocs\creditaxi\framework\web\CController.php(291): CFilterChain->run()
+#7 C:\xampp\htdocs\creditaxi\framework\web\CController.php(265): ClienteController->runActionWithFilters()
+#8 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(282): ClienteController->run()
+#9 C:\xampp\htdocs\creditaxi\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#10 C:\xampp\htdocs\creditaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\creditaxi\index.php(13): CWebApplication->run()
+REQUEST_URI=/creditaxi/cliente/create
+in C:\xampp\htdocs\creditaxi\protected\controllers\ClienteController.php (71)
+in C:\xampp\htdocs\creditaxi\index.php (13)

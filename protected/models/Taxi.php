@@ -104,7 +104,9 @@ class Taxi extends CActiveRecord
             $cliente=Yii::app()->session['Usuario'];
             $credito=$cliente->getrelated('creditos');
             $flotas=$cliente->getrelated('flotas');
+            
             $valor = $credito[0]->cupoAprobado;
+            
             $resultado = Yii::app()->db->createCommand(
                                 " SELECT SUM(cupo)  FROM taxi WHERE id_flota="
                                 . (int)  $flotas[0]->id_flota)->queryColumn();
