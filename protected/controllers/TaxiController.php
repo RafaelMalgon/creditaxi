@@ -62,10 +62,10 @@ class TaxiController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Taxi;
                 $cliente=Yii::app()->session['Usuario'];
                 $flota = $cliente->getRelated("flotas");            
                 $flota=$flota[0];                        
+		
                 $model = new Taxi('serch');
                 $model->id_flota=$flota->id_flota;
 
@@ -148,7 +148,7 @@ class TaxiController extends Controller
             
             $model = new Taxi('serch');
             $model->id_flota=$flota->id_flota;
-            //var_dump($flota->id_flota);
+            //var_dump($cliente);
             //die();
 		
                 if($this->getGet('Taxi')!=null)
