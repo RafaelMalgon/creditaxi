@@ -145,9 +145,9 @@ class ConductorController extends Controller
 	{
 		$model=new Conductor('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Conductor']))
-			$model->attributes=$_GET['Conductor'];
-
+		if($this->getGet('Conductor')!=null)
+                    $model->setAttributes ($this->getGet ('Conductor'));
+                
 		$this->render('admin',array(
 			'model'=>$model,
 		));

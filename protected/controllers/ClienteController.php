@@ -69,31 +69,17 @@ class ClienteController extends Controller
                 $a->id_rol=2;
                 
                 $this->performAjaxValidation(array($a,$b));
+                
                 if(isset($_POST['Cliente'],$_POST['Usuario']))           {
                     $a->attributes=$_POST['Cliente'];
                     $b->attributes=$_POST['Usuario'];
-                    //$b->idUsuario=$a->idCliente;
+                    $b->idUsuario=$a->idCliente;
                     if($b->save() && $a->save())
                         $this->redirect(array('view','id'=>$a->id_cliente));
                 }
                 $this->render('create',array('a'=>$a,'b'=>$b));
 
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-                /*
-		if($this->getPost('Cliente')!=null)
-		{
-			$model->setAttributes($this->getPost('Cliente'));
-                        $model->id_rol=2;
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id_cliente));
-		}
-
-		$this->render('create',array(
-			'model'=>$model,
-		));
-                
-                 */
+		
 	}
 
 	/**

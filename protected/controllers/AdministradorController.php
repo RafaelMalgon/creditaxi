@@ -135,6 +135,7 @@ class AdministradorController extends Controller
 	{
 		$model=new Administrador('search');
 		$model->unsetAttributes();  // clear any default values
+                
 		if($this->getGet('Administrador')!=null)
 			$model->setAttributes($this->getGet('Administrador'));
 

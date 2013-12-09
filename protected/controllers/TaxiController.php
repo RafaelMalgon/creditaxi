@@ -150,8 +150,9 @@ class TaxiController extends Controller
             $model->id_flota=$flota->id_flota;
             //var_dump($flota->id_flota);
             //die();
-		if(isset($_GET['Taxi']))
-			$model->attributes=$_GET['Taxi'];
+		
+                if($this->getGet('Taxi')!=null)
+			$model->setAttributes($this->getGet('Taxi'));
 
 		$this->render('admin',array(
 			'model'=>$model,
