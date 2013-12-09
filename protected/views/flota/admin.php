@@ -2,16 +2,6 @@
 /* @var $this FlotaController */
 /* @var $model Flota */
 
-$this->breadcrumbs=array(
-	'Flotas'=>array('index'),
-	'Manage',
-);
-
-$this->menu=array(
-	//array('label'=>'List Flota', 'url'=>array('index')),
-	array('label'=>'Crear Flota', 'url'=>array('create')),
-);
-
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
 	$('.search-form').toggle();
@@ -34,24 +24,38 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 </p>
 -->
 
-<?php echo CHtml::link('Busqueda avanzada','#',array('class'=>'search-button')); ?>
+<?php echo CHtml::link('Busqueda avanzada', '#', array('class' => 'search-button')); ?>
 <div class="search-form" style="display:none">
-<?php $this->renderPartial('_search',array(
-	'model'=>$model,
-)); ?>
+    <?php
+    $this->renderPartial('_search', array(
+        'model' => $model,
+    ));
+    ?>
 </div><!-- search-form -->
 
-<?php $this->widget('zii.widgets.grid.CGridView', array(
-	'id'=>'flota-grid',
-	'dataProvider'=>$model->search(),
-	'filter'=>$model,
-	'columns'=>array(
-		'id_flota',
-		'id_cliente',
-		'sobrecupoAgotado',
-
-		array(
-			'class'=>'CButtonColumn',
-		),
-	),
-)); ?>
+<?php
+$this->widget('zii.widgets.grid.CGridView', array(
+    'id' => 'flota-grid',
+    'dataProvider' => $model->search(),
+    'filter' => $model,
+    'columns' => array(
+        'id_flota',
+        'idCliente.nombre',
+        array(
+            'name' => 'sobrecupoApobado',
+            'value' => '$data->sobrecupoApobado?"Si":"No"',
+        ),
+        array(
+            'class' => 'CButtonColumn',
+            'template' => '{aprobe}',
+            'buttons' => array(
+                'aprobe' => array(
+                    'label' => 'Aprobar',
+                    'url' => 'Yii::app()->createUrl("flota/aprobar", array("id"=>$data->id_flota))',
+                    'visible' => '!$data->sobrecupoApobado',
+                ),
+            ),
+        ),
+    ),
+));
+?>

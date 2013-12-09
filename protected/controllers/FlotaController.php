@@ -36,7 +36,7 @@ class FlotaController extends Controller
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
+				'actions'=>array('admin','delete','Aprobar'),
 				'users'=>array('@'),
 			),
 			array('deny',  // deny all users
@@ -131,13 +131,19 @@ class FlotaController extends Controller
 	/**
 	 * Manages all models.
 	 */
+        public function actionAprobar($id)
+	{
+		$model = Flota::model()->findByPk($id);
+                $model->sobrecupoApobado=true;
+                if($model->save()){
+                    $this->redirect('admin');
+                }
+	}
 	public function actionAdmin()
 	{
 		$model=new Flota('search');
 		$model->unsetAttributes();  // clear any default values
                 $this->asignarSobrecupo();
-                //$model->obtenerValorSobrecupo(12345);
-                //var_dump($model->obtenerValorSobrecupo(55));
 		if($this->getPost('Flota') != null)
 			$model->setAttribute($this->getPost('Flota'));
 
