@@ -85,10 +85,14 @@ class SiteController extends Controller {
                 $validate = $model->validate();
                 $login = $model->login();
                 if ($validate && $login) {
-                    if (Yii::app()->session['Usuario']->Activo==1)
-                        $this->redirect(Yii::app()->user->returnUrl);
-                    else
-                        $this->redirect('Logout');
+                    if (Yii::app()->session['Rol'] == "Cliente") {
+                        if (Yii::app()->session['Usuario']->Activo == 1)
+                            $this->redirect(Yii::app()->user->returnUrl);
+                        else
+                            $this->redirect('Logout');
+                    }else{
+                            $this->redirect(Yii::app()->user->returnUrl);
+                    }
                 }
             }
             // display the login form

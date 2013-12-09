@@ -118,7 +118,8 @@ class TaxiController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-		$this->loadModel($id)->delete();
+		$model=$this->loadModel($id);
+                $model->delete();
 
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if($this->getGet('ajax')==null)
@@ -154,9 +155,7 @@ class TaxiController extends Controller
                 if($this->getGet('Taxi')!=null)
 			$model->setAttributes($this->getGet('Taxi'));
 
-		$this->render('admin',array(
-			'model'=>$model,
-		));
+		$this->render('admin',array('model'=>$model));
 	}
 
 	/**

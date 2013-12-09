@@ -87,21 +87,19 @@ class ProductoController extends Controller
 	{
 		$model=new Producto('search');
 		$model->unsetAttributes();  // clear any default values
-                $model->tipo='G';
-		if(isset($_GET['Producto']))
-			$model->attributes=$_GET['Producto'];
+                $model->tipo='C';
+		if($this->getGet('Producto')!=null)
+			$model->setAttributes($this->getGet('Producto'));
 
-		$this->render('admin',array(
-			'model'=>$model,'producto'=>'Combusible',
-		));
+		$this->render('admin',array('model'=>$model,'producto'=>'Combusible'));
 	}
 	public function actionLavada()
 	{
 		$model=new Producto('search');
 		$model->unsetAttributes();  // clear any default values
                 $model->tipo='L';
-		if(isset($_GET['Producto']))
-			$model->attributes=$_GET['Producto'];
+		if($this->getGet('Producto'))
+			$model->setAttributes($this->getGet('Producto'));
 
 		$this->render('admin',array(
 			'model'=>$model,'producto'=>'Lavada',
