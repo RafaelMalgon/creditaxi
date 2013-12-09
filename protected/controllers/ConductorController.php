@@ -145,7 +145,7 @@ class ConductorController extends Controller
 	public function actionAdmin()
 	{
 		$model=new Conductor('search');
-		$model->unsetAttributes();  // clear any default values
+		$model->unsetAttributes();  // clear any default values 
 		if($this->getGet('Conductor')!=null)
                     $model->setAttributes ($this->getGet ('Conductor'));
                 

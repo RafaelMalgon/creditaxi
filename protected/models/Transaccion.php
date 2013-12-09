@@ -53,6 +53,7 @@ class Transaccion extends CActiveRecord {
     }
 
     public function validateValor($attribute) {
+        Yii::app()->session['isSelling']=true;
         $taxi = Taxi::model()->findByPk($this->placa);
         $saldoCupo = $taxi->saldoCupo === null ? 0 : $taxi->saldoCupo;
         $saldoCupo = $saldoCupo - $this->valorTotal;
@@ -87,11 +88,11 @@ class Transaccion extends CActiveRecord {
                     }
                 } else {
                     $flota->sobrecupoAgotado = $flota->sobrecupoAgotado + $this->valorTotal;
-                    var_dump($taxi->saldoCupo);die();
                     $flota->save();
                 }
             }
         }
+        Yii::app()->session['isSelling']=false;
     }
 
     /**

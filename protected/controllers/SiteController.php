@@ -41,14 +41,19 @@ class SiteController extends Controller {
             $credito = $credito[0];
             $flotas = $usuario->getRelated('flotas');
             $flota = $flotas[0];
-            $taxis = $flota->getRelated('taxis');
-            $restante = 0;
-            foreach ($taxis as $taxi) {
-                $restante+=$taxi->saldoCupo;
-            }
-            if ($credito->cupoAprobado * (0.1) < $restante) {
-                $mensaje = "Le queda menos del 10% del cupo aprobado.";
-                $alarma = 1;
+            if ($flota != "") {
+                $taxis = $flota->getRelated('taxis');
+                $restante = 0;
+                foreach ($taxis as $taxi) {
+                    $restante+=$taxi->saldoCupo;
+                }
+                if ($credito->cupoAprobado * (0.1) > $restante) {
+                    $mensaje = "Le queda menos del 10% del cupo aprobado.";
+                    $alarma = 1;
+                } else {
+                    $mensaje = "Bienvenido a CrediTaxi";
+                    $alarma = 0;
+                }
             } else {
                 $mensaje = "Bienvenido a CrediTaxi";
                 $alarma = 0;
@@ -90,14 +95,14 @@ class SiteController extends Controller {
                             $this->redirect(Yii::app()->user->returnUrl);
                         else
                             $this->redirect('Logout');
-                    }else{
-                            $this->redirect(Yii::app()->user->returnUrl);
+                    }else {
+                        $this->redirect(Yii::app()->user->returnUrl);
                     }
                 }
             }
             // display the login form
             $this->render('login', array('model' => $model));
-        }else {
+        } else {
             $this->redirect(Yii::app()->homeUrl);
         }
     }
