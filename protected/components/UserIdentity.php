@@ -34,6 +34,8 @@ class UserIdentity extends CUserIdentity
                         Yii::app()->session['Rol']=$rol->nombreRol;
                         if($rol->nombreRol=="Cliente"){
                             Yii::app()->session['Usuario']=  Cliente::model()->findByPk($usuario->idUsuario);
+                            if(!Yii::app()->session['Usuario']->Activo)
+                                Yii::app()->session['Usuario']==null;
                         }else if($rol->nombreRol=="Administrador"){
                             Yii::app()->session['Usuario']= Administrador::model()->findByPk($usuario->idUsuario);
                         }else if($rol->nombreRol=="Operario"){

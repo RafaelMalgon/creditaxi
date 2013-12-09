@@ -24,7 +24,7 @@
 	<div class="row">
 		<?php echo $form->labelEx($model,'placa'); ?>
 		<?php // echo $form->textField($model,'placa',array('size'=>6,'maxlength'=>6)); ?>
-                <?php echo CHtml::dropDownList('Conductor[placa]',$model->placa,CHtml::listData(Taxi::model()->findAll(), "placa", "placa")); ?>
+                <?php echo CHtml::dropDownList('Conductor[placa]',$model->placa,CHtml::listData(Taxi::model()->findAll(), "placa", "placa"),array('empty'=>'--Seleccione un taxi--')); ?>
 		<?php echo $form->error($model,'placa'); ?>
 	</div>
 

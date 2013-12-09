@@ -34,7 +34,11 @@ class ClienteController extends Controller {
                 'users' => array('@'),
             ),
             array('allow', // allow admin user to perform 'admin' and 'delete' actions
+<<<<<<< HEAD
                 'actions' => array('admin', 'delete'),
+=======
+                'actions' => array('admin', 'delete','enable','disable'),
+>>>>>>> Diego/master
                 'users' => array('*'),
             ),
             array('deny', // deny all users
@@ -58,7 +62,11 @@ class ClienteController extends Controller {
      * If creation is successful, the browser will be redirected to the 'view' page.
      */
     public function actionCreate() {
+<<<<<<< HEAD
 
+=======
+        $model = new Cliente;
+>>>>>>> Diego/master
         $a = new Cliente;
         $b = new Usuario;
         $b->idRol = 2;
@@ -66,6 +74,7 @@ class ClienteController extends Controller {
 
         $this->performAjaxValidation(array($a, $b));
 
+<<<<<<< HEAD
         if ($this->getPost('Cliente') != null && $this->getPost('Usuario')) {
 
             $a->setAttributes($this->getPost('Cliente'));
@@ -74,19 +83,31 @@ class ClienteController extends Controller {
             if ($b->save()) {
                 if ($a->save()){
                     $this->redirect(array('view', 'id' => $a->id_cliente));                    
-        }
+                }
             }
+=======
+        if (isset($_POST['Cliente'], $_POST['Usuario'])) {
+            $a->attributes = $_POST['Cliente'];
+            $b->attributes = $_POST['Usuario'];
+            $b->idUsuario = $a->idCliente;
+            if ($b->save() && $a->save())
+                $this->redirect(array('view', 'id' => $a->id_cliente));
+>>>>>>> Diego/master
         }
         $this->render('create', array('a' => $a, 'b' => $b));
     }
 
+<<<<<<< HEAD
     
+=======
+>>>>>>> Diego/master
     /**
      * Updates a particular model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id the ID of the model to be updated
      */
     public function actionUpdate($id) {
+<<<<<<< HEAD
        
         $b = new Usuario;
         
@@ -96,6 +117,16 @@ class ClienteController extends Controller {
             
             $a->setAttributes($this->getPost('Cliente'));
             $b->setAttributes($this->getPost('Usuario'));
+=======
+        $a = new Cliente;
+        $b = new Usuario;
+        // $this->performAjaxValidation(array($a,$b));
+        $a = $this->loadModel($id);
+
+        if (isset($_POST['Cliente'], $_POST['Usuario'])) {
+            $a->attributes = $_POST['Cliente'];
+            $b->attributes = $_POST['Usuario'];
+>>>>>>> Diego/master
 
             $b->idUsuario = $a->id_cliente;
             $b->setIsNewRecord(false);
@@ -112,10 +143,18 @@ class ClienteController extends Controller {
      * @param integer $id the ID of the model to be deleted
      */
     public function actionDelete($id) {
+<<<<<<< HEAD
+        $this->loadModel($id)->delete();
+
+        // if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+        if ($this->getGet('ajax') == null)
+            $this->redirect($this->getPost('returnUrl') != null ? $this->getPost('returnUrl') : array('admin'));
+=======
         $model = Cliente::model()->findByPk($id);
         $model->Activo = false;
         if ($model->save())
             $this->redirect('admin');
+>>>>>>> Diego/master
     }
 
     /**
@@ -134,6 +173,7 @@ class ClienteController extends Controller {
     public function actionAdmin() {
         $model = new Cliente('search');
         $model->unsetAttributes();  // clear any default values
+<<<<<<< HEAD
 
         if ($this->getGet('Cliente') != null)
             $model->setAttributes($this->getGet('Cliente'));
@@ -141,6 +181,13 @@ class ClienteController extends Controller {
         $this->render('admin', array(
             'model' => $model,
         ));
+=======
+        if ($this->getGet('Cliente') !=null)
+            $model->setAttributes($this->getGet('Cliente'));
+
+        $this->render('admin', array('model' => $model));
+    }
+
     public function actionEnable($id) {
         $cliente = Cliente::model()->findByPk($id);
         $cliente->Activo=true;
@@ -155,6 +202,7 @@ class ClienteController extends Controller {
         if($cliente->save()){
             $this->redirect('admin');
         }
+>>>>>>> Diego/master
     }
 
     /**
