@@ -128,12 +128,10 @@ class ClienteController extends Controller {
     public function actionAdmin() {
         $model = new Cliente('search');
         $model->unsetAttributes();  // clear any default values
-        if (isset($_GET['Cliente']))
-            $model->attributes = $_GET['Cliente'];
+        if ($this->getGet('Cliente') !=null)
+            $model->setAttributes($this->getGet('Cliente'));
 
-        $this->render('admin', array(
-            'model' => $model,
-        ));
+        $this->render('admin', array('model' => $model));
     }
 
     public function actionEnable($id) {

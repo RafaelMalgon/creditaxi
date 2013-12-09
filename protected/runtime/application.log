@@ -1024,3 +1024,51 @@ Stack trace:
 REQUEST_URI=/crediTaxi/cliente/enable?id=55
 HTTP_REFERER=http://localhost/crediTaxi/Cliente/admin
 ---
+2013/12/09 06:50:09 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`creditaxi`.`conductor`, CONSTRAINT `FK_conduce_Taxi` FOREIGN KEY (`placa`) REFERENCES `taxi` (`placa`)). La sentencia SQL ejecutada fue: UPDATE `conductor` SET `id_conductor`=:yp0, `placa`=:yp1 WHERE `conductor`.`id_conductor`=1324.
+in C:\xampp\htdocs\crediTaxi\protected\controllers\ConductorController.php (102)
+in C:\xampp\htdocs\crediTaxi\index.php (13)
+2013/12/09 06:50:09 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No se puede duplicar el conductor de un taxi.' in C:\xampp\htdocs\crediTaxi\protected\controllers\ConductorController.php:111
+Stack trace:
+#0 [internal function]: ConductorController->actionUpdate('1324')
+#1 C:\xampp\htdocs\crediTaxi\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ConductorController), Array)
+#2 C:\xampp\htdocs\crediTaxi\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ConductorController), Object(ReflectionMethod), Array)
+#3 C:\xampp\htdocs\crediTaxi\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\crediTaxi\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\crediTaxi\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\crediTaxi\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\crediTaxi\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\crediTaxi\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\crediTaxi\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\crediTaxi\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\crediTaxi\framework\web\CWebApplication.php(282): CController->run('update')
+#12 C:\xampp\htdocs\crediTaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('conductor/updat...')
+#13 C:\xampp\htdocs\crediTaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\crediTaxi\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/crediTaxi/conductor/update?id=1324
+HTTP_REFERER=http://localhost/crediTaxi/conductor/update?id=1324
+---
+2013/12/09 06:51:03 [error] [system.db.CDbCommand] CDbCommand::execute() falló: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`creditaxi`.`conductor`, CONSTRAINT `FK_conduce_Taxi` FOREIGN KEY (`placa`) REFERENCES `taxi` (`placa`)). La sentencia SQL ejecutada fue: UPDATE `conductor` SET `id_conductor`=:yp0, `placa`=:yp1 WHERE `conductor`.`id_conductor`=1002.
+in C:\xampp\htdocs\crediTaxi\protected\controllers\ConductorController.php (102)
+in C:\xampp\htdocs\crediTaxi\index.php (13)
+2013/12/09 06:51:03 [error] [exception.CHttpException.500] exception 'CHttpException' with message 'No se puede duplicar el conductor de un taxi.' in C:\xampp\htdocs\crediTaxi\protected\controllers\ConductorController.php:111
+Stack trace:
+#0 [internal function]: ConductorController->actionUpdate('1002')
+#1 C:\xampp\htdocs\crediTaxi\framework\web\actions\CAction.php(108): ReflectionMethod->invokeArgs(Object(ConductorController), Array)
+#2 C:\xampp\htdocs\crediTaxi\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ConductorController), Object(ReflectionMethod), Array)
+#3 C:\xampp\htdocs\crediTaxi\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\crediTaxi\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\crediTaxi\framework\web\filters\CFilter.php(40): CFilterChain->run()
+#6 C:\xampp\htdocs\crediTaxi\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\crediTaxi\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\crediTaxi\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\crediTaxi\framework\web\CController.php(291): CFilterChain->run()
+#10 C:\xampp\htdocs\crediTaxi\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\crediTaxi\framework\web\CWebApplication.php(282): CController->run('update')
+#12 C:\xampp\htdocs\crediTaxi\framework\web\CWebApplication.php(141): CWebApplication->runController('conductor/updat...')
+#13 C:\xampp\htdocs\crediTaxi\framework\base\CApplication.php(169): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\crediTaxi\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/crediTaxi/conductor/update?id=1002
+HTTP_REFERER=http://localhost/crediTaxi/conductor/update?id=1002
+---

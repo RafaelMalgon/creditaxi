@@ -38,7 +38,7 @@ class Conductor extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id_conductor, placa', 'required'),
+			array('id_conductor', 'required'),
 			array('id_conductor', 'numerical', 'integerOnly'=>true),
 			array('placa', 'length', 'max'=>6),
 			// The following rule is used by search().
