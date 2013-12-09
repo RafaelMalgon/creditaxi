@@ -22,12 +22,12 @@
 		<?php echo $form->error($a,'id_cliente'); ?>
 	</div>
 	<div class="row">
-		<?php // $b->idUsuario = $a->id_cliente ; ?>
+		<?php //$b->idUsuario = $a->id_cliente ; ?>
 		<?php  //echo $a->id_cliente ; ?>
-		<?php echo $form->labelEx($b,'idUsuario'); ?>
-		<?php echo $form->textField($b,'idUsuario'); ?>
-		<?php // echo $form->textField($b,'idUsuario',array('value'=>Yii::app()->user->getUsername(),'disabled'=>'disabled')); ?>
-		<?php  echo $form->error($b,'idUsuario'); ?>
+		<?php //echo $form->labelEx($b,'idUsuario'); ?>		
+		<?php //echo $form->textField($b,'idUsuario'); ?>
+		<?php //echo $form->textField($b,'idUsuario',array('value'=>Yii::app()->user->getUsername(),'disabled'=>'disabled')); ?>
+		<?php //echo $form->error($b,'idUsuario'); ?>
 	</div>
 
 	<div  class="row">
@@ -68,7 +68,7 @@
 	</div>
 
 	<div class="row buttons">
-		<?php echo CHtml::submitButton($a->isNewRecord ? 'Crear' : 'Save'); ?>
+		<?php echo CHtml::submitButton($a->isNewRecord ? 'Crear' : 'Guardar'); ?>
 	</div> <?php $this->endWidget(); ?>
 
 </div><!-- form -->
